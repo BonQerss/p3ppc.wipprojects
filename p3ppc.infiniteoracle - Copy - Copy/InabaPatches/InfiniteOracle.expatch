@@ -1,6 +1,0 @@
-[replacement Infinite Oacle]
-pattern = 66 3B CE 75 73 B9 00 13 00 00 E8 09 2A 1A 00
-offset = 10
-replacement = bytes( B8 00 00 00 00 )
-
-

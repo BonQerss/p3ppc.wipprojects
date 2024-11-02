@@ -1,6 +1,0 @@
-[replacement Infinite Persona Switching]
-pattern = 75 15 66 83 B8 A4 00 00 00 01 75 0B B8 00 04 00 00 66 85 43 1C
-offset = 18
-replacement = bytes( 09 )
-
-
