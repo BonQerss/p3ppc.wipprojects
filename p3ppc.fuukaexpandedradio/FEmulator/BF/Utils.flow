@@ -1,0 +1,56 @@
+bool keepOpen;
+
+
+void songselect(int len, int start, int msgRef) {
+    // Calculate the number of pages needed
+    int pages = (len + 3) / 4;
+    
+    int selectionWindow = 0;
+    int currentPage = 0;
+    keepOpen = true;
+
+    while (keepOpen) {
+        // Define key mappings
+        SEL_DEFKEY(14, 32); // Back
+        SEL_DEFKEY(3, 99);  // Random / Start
+        SEL_DEFKEY(5, 30);  // Left
+        SEL_DEFKEY(7, 31);  // Right
+        
+        // Get the user selection
+        MSG_WND_DSP();
+        int selection = MSG_SELECT(TitleName, msgRef + selectionWindow, 0);
+        
+        // Handle the selection
+        switch (selection) {
+            case 0: // King Queen and Slave
+                int currentIndex = ( currentPage * 4 );
+                SET_COUNT(1, start + selection + currentIndex );
+                BGM(start + selection + currentIndex);
+                keepOpen = false;
+                break;
+            
+            case 30: // Next Page
+                if (currentPage < pages - 1) {
+                    selectionWindow++;
+                    currentPage++;
+                }
+                break;
+            
+            case 31: // Previous Page
+                if (currentPage > 0) {
+                    selectionWindow--;
+                    currentPage--;
+                }
+                break;
+            
+            case 32: // Back
+                return; // Exit the function
+            
+            case 99: // Random
+                int var46 = RND(len - 1);
+                SET_COUNT(1, start + var46);
+                BGM(GET_COUNT(1));
+                return; // Exit the function
+        }
+    }
+}

@@ -1,0 +1,1585 @@
+
+
+global ( 0 ) int normalizePrices;
+
+void Check_Difficulty()
+{
+	if ( BIT_CHK( 4889 ) == 1 )
+	{
+		normalizePrices = 1;
+	}
+	if ( BIT_CHK( 4890 ) == 1 )
+	{
+		normalizePrices = 2;
+	}
+	else
+	{
+		normalizePrices = 0;
+	}
+}
+
+// Procedure Index: 2
+void out_velvet_room_hook()
+{
+    FUNCTION_0010( 1, 0, 255, 255, 255 );
+    FUNCTION_001E( 3, 8 );
+	
+	if ( normalizePrices == 1 )
+	{
+		BIT_ON( 4889 );
+		normalizePrices = 0;
+	}
+	if ( normalizePrices == 2 )
+	{
+		BIT_ON( 4890 );
+		normalizePrices = 0;
+	}
+    
+    if ( BIT_CHK( 3072 ) )
+    {
+        BIT_OFF( 3072 );
+        CALL_FIELD( 8, 10, 0, 0 );
+        return;
+    }
+    else if ( BIT_CHK( 3073 ) )
+    {
+        BIT_OFF( 3073 );
+        SET_COUNT( 1, 0 );
+        CALL_FIELD( 15, 18, 2, 0 );
+        return;
+    }
+    else 
+    {
+        MSG_WND_DSP();
+        MSG( TEST_ERROR_2 );
+        MSG_WND_CLS();
+        CALL_FIELD( 8, 9, 1, 0 );
+        return;
+    }
+
+}
+
+// Procedure Index: 33
+void comu_velvet_room_hook()
+{
+	
+	Check_Difficulty();
+	if ( normalizePrices == 1 )
+	{
+		BIT_OFF( 4889 );
+	}
+	if ( normalizePrices == 2 )
+	{
+		BIT_OFF( 4890 );
+	}
+	
+    int var15;
+    int var16;
+    int var17;
+    int var14;
+    EVT_FUNCTION_0040( 0, -272, 0 );
+    var15 = 0;
+    FUNCTION_000D( 10 );
+    var16 = FLD_FUNCTION_003E();
+    BGM( 54 );
+    
+    if ( GET_DAY( 6, 18 ) && !BIT_CHK( 4350 ) )
+    {
+        MSG_WND_DSP();
+        
+        if ( BIT_CHK( 312 ) )
+        {
+            MSG( SISSOU_INFO_1ST_M );
+            MSG_WND_CLS();
+            FUNCTION_002D( 99 );
+        }
+        else 
+        {
+            MSG( SISSOU_INFO_1ST );
+            MSG_WND_CLS();
+            FUNCTION_002D( 99 );
+        }
+
+        BIT_ON( 4350 );
+        BIT_ON( 4619 );
+    }
+
+    
+    if ( !BIT_CHK( 4618 ) )
+    {
+        MSG_WND_DSP();
+        MSG( GATTAI_TUTORIAL_01 );
+        MSG_WND_CLS();
+        BIT_ON( 4618 );
+        
+        if ( BIT_CHK( 4611 ) )
+        {
+            
+            if ( !BIT_CHK( 4612 ) )
+            {
+                MSG_WND_DSP();
+                
+                if ( BIT_CHK( 312 ) )
+                {
+                    MSG( IRAI_KAIKIN_01_M );
+                }
+                else 
+                {
+                    MSG( IRAI_KAIKIN_01 );
+                }
+
+                MSG_WND_CLS();
+                MSG_WND_DSP();
+                
+                if ( BIT_CHK( 312 ) )
+                {
+                    MSG( IRAI_KAIKIN_02_M );
+                }
+                else 
+                {
+                    MSG( IRAI_KAIKIN_02 );
+                }
+
+                MSG_WND_CLS();
+                BIT_ON( 4612 );
+            }
+
+        }
+
+        BIT_ON( 5127 );
+        BIT_ON( 4619 );
+        var15 = 1;
+    }
+
+    
+    if ( !BIT_CHK( 4619 ) )
+    {
+        
+        if ( BIT_CHK( 4611 ) )
+        {
+            
+            if ( !BIT_CHK( 4612 ) )
+            {
+                MSG_WND_DSP();
+                
+                if ( BIT_CHK( 312 ) )
+                {
+                    MSG( IRAI_KAIKIN_01_M );
+                }
+                else 
+                {
+                    MSG( IRAI_KAIKIN_01 );
+                }
+
+                MSG_WND_CLS();
+                MSG_WND_DSP();
+                
+                if ( BIT_CHK( 312 ) )
+                {
+                    MSG( IRAI_KAIKIN_02_M );
+                }
+                else 
+                {
+                    MSG( IRAI_KAIKIN_02 );
+                }
+
+                MSG_WND_CLS();
+                BIT_ON( 4612 );
+                BIT_ON( 5127 );
+                BIT_ON( 4619 );
+                var15 = 1;
+            }
+
+        }
+
+    }
+
+    
+    if ( !BIT_CHK( 4619 ) )
+    {
+        
+        if ( BIT_CHK( 4613 ) )
+        {
+            
+            if ( !BIT_CHK( 4614 ) )
+            {
+                MSG_WND_DSP();
+                
+                if ( BIT_CHK( 4889 ) )
+                {
+                    
+                    if ( BIT_CHK( 312 ) )
+                    {
+                        MSG( ZENSHO_KAIKIN_01_HARD_M );
+                    }
+                    else 
+                    {
+                        MSG( ZENSHO_KAIKIN_01_HARD );
+                    }
+
+                }
+                else if ( BIT_CHK( 312 ) )
+                {
+                    MSG( ZENSHO_KAIKIN_01_M );
+                }
+                else 
+                {
+                    MSG( ZENSHO_KAIKIN_01 );
+                }
+
+                BIT_ON( 4614 );
+                MSG_WND_CLS();
+                BIT_ON( 5127 );
+                BIT_ON( 4619 );
+                var15 = 1;
+            }
+
+        }
+
+    }
+
+    
+    if ( !BIT_CHK( 4619 ) )
+    {
+        
+        if ( CHK_DAYS_STARTEND( 5, 11, 6, 8 ) == 1 )
+        {
+            
+            if ( !BIT_CHK( 4835 ) )
+            {
+                MSG_WND_DSP();
+                
+                if ( BIT_CHK( 312 ) )
+                {
+                    MSG( BUKIGATTAI_INFO_M );
+                }
+                else 
+                {
+                    MSG( BUKIGATTAI_INFO );
+                }
+
+                BIT_ON( 4835 );
+                MSG_WND_CLS();
+                BIT_ON( 5127 );
+                BIT_ON( 4619 );
+                var15 = 1;
+            }
+
+        }
+
+    }
+
+    
+    if ( !BIT_CHK( 4619 ) )
+    {
+        
+        if ( !BIT_CHK( 2864 ) )
+        {
+            
+            if ( BIT_CHK( 4104 ) )
+            {
+                
+                if ( ( ( CMM_GET_LV( 2 ) == 10 ) && ( CMM_GET_LV( 3 ) == 10 ) ) && ( CMM_GET_LV( 4 ) == 10 ) )
+                {
+                    
+                    if ( ( ( CMM_GET_LV( 5 ) == 10 ) && ( CMM_GET_LV( 6 ) == 10 ) ) && ( CMM_GET_LV( 7 ) == 10 ) )
+                    {
+                        
+                        if ( ( ( CMM_GET_LV( 8 ) == 10 ) && ( CMM_GET_LV( 9 ) == 10 ) ) && ( CMM_GET_LV( 10 ) == 10 ) )
+                        {
+                            
+                            if ( ( ( CMM_GET_LV( 14 ) == 10 ) && ( CMM_GET_LV( 18 ) == 10 ) ) && ( CMM_GET_LV( 20 ) == 10 ) )
+                            {
+                                
+                                if ( ( ( CMM_GET_LV( 21 ) == 10 ) && ( CMM_GET_LV( 22 ) == 10 ) ) && ( CMM_GET_LV( 23 ) == 10 ) )
+                                {
+                                    
+                                    if ( ( ( CMM_GET_LV( 24 ) == 10 ) && ( CMM_GET_LV( 25 ) == 10 ) ) && ( CMM_GET_LV( 26 ) == 10 ) )
+                                    {
+                                        
+                                        if ( ( CMM_GET_LV( EVT_FUNCTION_002A( 0 ) ) == 10 ) && ( CMM_GET_LV( EVT_FUNCTION_002A( 1 ) ) == 10 ) )
+                                        {
+                                            MSG_WND_DSP();
+                                            MSG( ALLCOMMU_MASTER_INFO );
+                                            BIT_ON( 2864 );
+                                            SET_ITEM_NUM( ( 1536 + 54 ), ( GET_ITEM_NUM( ( 1536 + 54 ) ) + 1 ) );
+                                            BIT_ON( 566 );
+                                            MSG_WND_CLS();
+                                            BIT_ON( 5127 );
+                                            BIT_ON( 4619 );
+                                            var15 = 1;
+                                        }
+
+                                    }
+
+                                }
+
+                            }
+
+                        }
+
+                    }
+
+                }
+
+            }
+            else if ( BIT_CHK( 4103 ) )
+            {
+                
+                if ( ( ( CMM_GET_LV( 2 ) == 10 ) && ( CMM_GET_LV( 3 ) == 10 ) ) && ( CMM_GET_LV( 4 ) == 10 ) )
+                {
+                    
+                    if ( ( ( CMM_GET_LV( 5 ) == 10 ) && ( CMM_GET_LV( 6 ) == 10 ) ) && ( CMM_GET_LV( 7 ) == 10 ) )
+                    {
+                        
+                        if ( ( ( CMM_GET_LV( 8 ) == 10 ) && ( CMM_GET_LV( 13 ) == 10 ) ) && ( CMM_GET_LV( EVT_FUNCTION_0023( 14 ) ) == 10 ) )
+                        {
+                            
+                            if ( ( ( CMM_GET_LV( EVT_FUNCTION_0023( 0x10 ) ) == 10 ) && ( CMM_GET_LV( 18 ) == 10 ) ) && ( CMM_GET_LV( 20 ) == 10 ) )
+                            {
+                                
+                                if ( ( ( CMM_GET_LV( 21 ) == 10 ) && ( CMM_GET_LV( 22 ) == 10 ) ) && ( CMM_GET_LV( EVT_FUNCTION_0023( 23 ) ) == 10 ) )
+                                {
+                                    
+                                    if ( ( ( CMM_GET_LV( 25 ) == 10 ) && ( CMM_GET_LV( 26 ) == 10 ) ) && ( CMM_GET_LV( 27 ) == 10 ) )
+                                    {
+                                        
+                                        if ( ( CMM_GET_LV( EVT_FUNCTION_002A( 0 ) ) == 10 ) && ( CMM_GET_LV( EVT_FUNCTION_002A( 1 ) ) == 10 ) )
+                                        {
+                                            MSG_WND_DSP();
+                                            MSG( ALLCOMMU_MASTER_INFO );
+                                            BIT_ON( 2864 );
+                                            SET_ITEM_NUM( ( 1536 + 54 ), ( GET_ITEM_NUM( ( 1536 + 54 ) ) + 1 ) );
+                                            BIT_ON( 566 );
+                                            MSG_WND_CLS();
+                                            BIT_ON( 5127 );
+                                            BIT_ON( 4619 );
+                                            var15 = 1;
+                                        }
+
+                                    }
+
+                                }
+
+                            }
+
+                        }
+
+                    }
+
+                }
+
+            }
+
+        }
+
+    }
+
+    
+    if ( !BIT_CHK( 4619 ) )
+    {
+        
+        if ( SHD_FUNCTION_0013() == 162 )
+        {
+            
+            if ( !BIT_CHK( 2808 ) )
+            {
+                MSG_WND_DSP();
+                
+                if ( BIT_CHK( 312 ) )
+                {
+                    MSG( ERI_MAARA_M );
+                }
+                else 
+                {
+                    MSG( ERI_MAARA );
+                }
+
+                BIT_ON( 2808 );
+                MSG_WND_CLS();
+                BIT_ON( 5127 );
+                BIT_ON( 4619 );
+                var15 = 1;
+            }
+
+        }
+
+    }
+
+    
+    if ( !BIT_CHK( 4619 ) )
+    {
+        
+        if ( BIT_CHK( 3315 ) && !BIT_CHK( 4641 ) )
+        {
+            MSG_WND_DSP();
+            
+            if ( BIT_CHK( 312 ) )
+            {
+                MSG( ERI_MARGARET_M );
+            }
+            else 
+            {
+                MSG( ERI_MARGARET );
+            }
+
+            BIT_ON( 4641 );
+            MSG_WND_CLS();
+            BIT_ON( 5127 );
+            BIT_ON( 4619 );
+            var15 = 1;
+        }
+
+    }
+
+    
+    if ( !BIT_CHK( 4619 ) )
+    {
+        
+        if ( EVT_FUNCTION_0048( 0 ) != -1 )
+        {
+            MSG_WND_DSP();
+            var17 = EVT_FUNCTION_0048( 0 );
+            
+            if ( var17 == 0 )
+            {
+                SET_MSG_VAR( 0, 44, 0 );
+                SET_MSG_VAR( 1, 47, 0 );
+            }
+            else if ( var17 == 1 )
+            {
+                SET_MSG_VAR( 0, 48, 0 );
+                SET_MSG_VAR( 1, 52, 0 );
+            }
+            else if ( var17 == 2 )
+            {
+                SET_MSG_VAR( 0, 56, 0 );
+                SET_MSG_VAR( 1, 61, 0 );
+            }
+            else if ( var17 == 3 )
+            {
+                SET_MSG_VAR( 0, 68, 0 );
+                SET_MSG_VAR( 1, 73, 0 );
+            }
+            else if ( var17 == 4 )
+            {
+                SET_MSG_VAR( 0, 80, 0 );
+                SET_MSG_VAR( 1, 85, 0 );
+            }
+            else if ( var17 == 5 )
+            {
+                SET_MSG_VAR( 0, 95, 0 );
+                SET_MSG_VAR( 1, 100, 0 );
+            }
+            else if ( var17 == 6 )
+            {
+                SET_MSG_VAR( 0, 101, 0 );
+                SET_MSG_VAR( 1, 105, 0 );
+            }
+            else if ( var17 == 7 )
+            {
+                SET_MSG_VAR( 0, 106, 0 );
+                SET_MSG_VAR( 1, 111, 0 );
+            }
+            else if ( var17 == 8 )
+            {
+                SET_MSG_VAR( 0, 118, 0 );
+                SET_MSG_VAR( 1, 123, 0 );
+            }
+            else if ( var17 == 9 )
+            {
+                SET_MSG_VAR( 0, 130, 0 );
+                SET_MSG_VAR( 1, 135, 0 );
+            }
+            else if ( var17 == 10 )
+            {
+                SET_MSG_VAR( 0, 136, 0 );
+                SET_MSG_VAR( 1, 140, 0 );
+            }
+            else if ( var17 == 11 )
+            {
+                SET_MSG_VAR( 0, 145, 0 );
+                SET_MSG_VAR( 1, 150, 0 );
+            }
+            else if ( var17 == 12 )
+            {
+                SET_MSG_VAR( 0, 151, 0 );
+                SET_MSG_VAR( 1, 156, 0 );
+            }
+            else if ( var17 == 13 )
+            {
+                SET_MSG_VAR( 0, 158, 0 );
+                SET_MSG_VAR( 1, 163, 0 );
+            }
+            else if ( var17 == 14 )
+            {
+                SET_MSG_VAR( 0, 164, 0 );
+                SET_MSG_VAR( 1, 169, 0 );
+            }
+            else if ( var17 == 15 )
+            {
+                SET_MSG_VAR( 0, 170, 0 );
+                SET_MSG_VAR( 1, 176, 0 );
+            }
+            else if ( var17 == 0x10 )
+            {
+                SET_MSG_VAR( 0, 178, 0 );
+                SET_MSG_VAR( 1, 185, 0 );
+            }
+            else if ( var17 == 17 )
+            {
+                SET_MSG_VAR( 0, 200, 0 );
+                SET_MSG_VAR( 1, 206, 0 );
+            }
+            else if ( var17 == 18 )
+            {
+                SET_MSG_VAR( 0, 220, 0 );
+                SET_MSG_VAR( 1, 226, 0 );
+            }
+            else 
+            {
+                SET_MSG_VAR( 0, 225, 0 );
+                SET_MSG_VAR( 1, 253, 0 );
+            }
+
+            
+            if ( EVT_FUNCTION_0048( 1 ) != -1 )
+            {
+                
+                if ( BIT_CHK( 312 ) )
+                {
+                    MSG( SISSOU_INFO_M_2 );
+                    MSG_WND_CLS();
+                }
+                else 
+                {
+                    MSG( SISSOU_INFO_2 );
+                    MSG_WND_CLS();
+                }
+
+            }
+            else if ( BIT_CHK( 312 ) )
+            {
+                MSG( SISSOU_INFO_M );
+                MSG_WND_CLS();
+            }
+            else 
+            {
+                MSG( SISSOU_INFO );
+                MSG_WND_CLS();
+            }
+
+            BIT_ON( 4619 );
+            var15 = 1;
+        }
+
+    }
+
+    _505:
+    
+    if ( 1 )
+    {
+        
+        if ( BIT_CHK( 4640 ) )
+        {
+            BIT_ON( 5127 );
+            FCL_FUNCTION_0014();
+            BIT_OFF( 5127 );
+        }
+        else 
+        {
+            MSG_WND_DSP();
+            
+            if ( var15 == 0 )
+            {
+                
+                if ( BIT_CHK( 3035 ) )
+                {
+                    
+                    if ( BIT_CHK( 312 ) )
+                    {
+                        MSG( WELCOME_VEL_M_ROOM_FULL );
+                    }
+                    else 
+                    {
+                        MSG( WELCOME_VELVET_ROOM_FULL );
+                    }
+
+                }
+                else if ( BIT_CHK( 2590 ) )
+                {
+                    
+                    if ( BIT_CHK( 312 ) )
+                    {
+                        MSG( WELCOME_VEL_M_ROOM_FULL2 );
+                    }
+                    else 
+                    {
+                        MSG( WELCOME_VELVET_ROOM_FULL_2 );
+                    }
+
+                }
+                else if ( BIT_CHK( 312 ) )
+                {
+                    MSG( WELCOME_VEL_M_ROOM );
+                }
+                else 
+                {
+                    MSG( WELCOME_VELVET_ROOM );
+                }
+
+                
+                if ( BIT_CHK( 3030 ) )
+                {
+                    
+                    if ( BIT_CHK( 312 ) )
+                    {
+                        MSG( IRAI_TUIKA_M );
+                    }
+                    else 
+                    {
+                        MSG( IRAI_TUIKA );
+                    }
+
+                }
+
+            }
+            else if ( BIT_CHK( 312 ) )
+            {
+                MSG( VEL_M_ROOM );
+            }
+            else 
+            {
+                MSG( VELVET_ROOM );
+            }
+
+            var15 = 1;
+            
+            if ( !BIT_CHK( 4612 ) )
+            {
+                SEL_DEFKEY( 14, 1 );
+                
+                if ( BIT_CHK( 312 ) )
+                {
+                    var14 = SEL( VEL_M_SEL_1 );
+                }
+                else 
+                {
+                    var14 = SEL( VELVET_SEL_1 );
+                }
+
+                
+                if ( var14 == 0 )
+                {
+                    MSG_WND_CLS();
+                    BIT_ON( 5127 );
+                    CALL_COMBINE_SHOP();
+                    BIT_OFF( 5127 );
+                }
+                else if ( BIT_CHK( 312 ) )
+                {
+                    MSG( GOODBAY_VEL_M_ROOM );
+                }
+                else 
+                {
+                    MSG( GOODBAY_VELVET_ROOM );
+                }
+
+                MSG_WND_CLS();
+                BIT_OFF( 4619 );
+                BIT_OFF( 5127 );
+                out_velvet_room();
+                return;
+            }
+            else if ( !BIT_CHK( 4614 ) )
+            {
+                
+                if ( BIT_CHK( 5045 ) && ( FUNCTION_0033() == 4 ) )
+                {
+                    SEL_DEFKEY( 14, 3 );
+                    
+                    if ( BIT_CHK( 312 ) )
+                    {
+                        gVar226 = SEL( VEL_M_SEL_5 );
+                    }
+                    else 
+                    {
+                        gVar226 = SEL( VELVET_SEL_5 );
+                    }
+
+                    
+                    if ( gVar226 == 0 )
+                    {
+                        MSG_WND_CLS();
+                        BIT_ON( 5127 );
+                        CALL_COMBINE_SHOP();
+                        BIT_OFF( 5127 );
+                    }
+                    else if ( gVar226 == 1 )
+                    {
+                        MSG_WND_CLS();
+                        BIT_ON( 5127 );
+                        FCL_FUNCTION_0014();
+                        BIT_OFF( 5127 );
+                    }
+                    else if ( gVar226 == 2 )
+                    {
+                        
+                        if ( BIT_CHK( 312 ) )
+                        {
+                            MSG( ERI_DATE_START_M );
+                        }
+                        else 
+                        {
+                            MSG( ERI_DATE_START );
+                        }
+
+                        MSG_WND_CLS();
+                        BIT_OFF( 5127 );
+                        FADE( 3, 0 );
+                        
+                        if ( BIT_CHK( 312 ) )
+                        {
+                            
+                            if ( BIT_CHK( 5049 ) )
+                            {
+                                CALL_EVENT( 520, 451 );
+                                BIT_ON( 5050 );
+                            }
+                            else if ( BIT_CHK( 5048 ) )
+                            {
+                                CALL_EVENT( 520, 440 );
+                                BIT_ON( 5049 );
+                            }
+                            else if ( BIT_CHK( 5047 ) )
+                            {
+                                CALL_EVENT( 520, 430 );
+                                BIT_ON( 5048 );
+                            }
+                            else if ( BIT_CHK( 5046 ) )
+                            {
+                                CALL_EVENT( 520, 420 );
+                                BIT_ON( 5047 );
+                            }
+                            else 
+                            {
+                                CALL_EVENT( 520, 411 );
+                                BIT_ON( 5046 );
+                            }
+
+                        }
+                        else if ( BIT_CHK( 4103 ) )
+                        {
+                            
+                            if ( BIT_CHK( 5049 ) )
+                            {
+                                CALL_EVENT( 520, 351 );
+                                BIT_ON( 5050 );
+                            }
+                            else if ( BIT_CHK( 5048 ) )
+                            {
+                                CALL_EVENT( 520, 340 );
+                                BIT_ON( 5049 );
+                            }
+                            else if ( BIT_CHK( 5047 ) )
+                            {
+                                CALL_EVENT( 520, 330 );
+                                BIT_ON( 5048 );
+                            }
+                            else if ( BIT_CHK( 5046 ) )
+                            {
+                                CALL_EVENT( 520, 320 );
+                                BIT_ON( 5047 );
+                            }
+                            else 
+                            {
+                                CALL_EVENT( 520, 311 );
+                                BIT_ON( 5046 );
+                            }
+
+                        }
+                        else if ( BIT_CHK( 5049 ) )
+                        {
+                            CALL_EVENT( 520, 51 );
+                            BIT_ON( 5050 );
+                        }
+                        else if ( BIT_CHK( 5048 ) )
+                        {
+                            CALL_EVENT( 520, 40 );
+                            BIT_ON( 5049 );
+                        }
+                        else if ( BIT_CHK( 5047 ) )
+                        {
+                            CALL_EVENT( 520, 30 );
+                            BIT_ON( 5048 );
+                        }
+                        else if ( BIT_CHK( 5046 ) )
+                        {
+                            CALL_EVENT( 520, 20 );
+                            BIT_ON( 5047 );
+                        }
+                        else 
+                        {
+                            CALL_EVENT( 520, 11 );
+                            BIT_ON( 5046 );
+                        }
+
+                        BIT_OFF( 5045 );
+                        BIT_ON( 4640 );
+                        BIT_ON( 3072 );
+                        FUNCTION_001E( 3, 8 );
+                        
+                        if ( BIT_CHK( 312 ) )
+                        {
+                            CALL_FIELD( 8, 18, 0, 0 );
+                        }
+                        else 
+                        {
+                            CALL_FIELD( 8, 17, 0, 0 );
+                        }
+
+                        return;
+                    }
+                    else if ( BIT_CHK( 312 ) )
+                    {
+                        MSG( GOODBAY_VEL_M_ROOM );
+                    }
+                    else 
+                    {
+                        MSG( GOODBAY_VELVET_ROOM );
+                    }
+
+                    MSG_WND_CLS();
+                    BIT_OFF( 4619 );
+                    BIT_OFF( 5127 );
+                    out_velvet_room();
+                    return;
+                }
+                else if ( BIT_CHK( 5045 ) && ( FUNCTION_0033() == 3 ) )
+                {
+                    
+                    if ( !BIT_CHK( 5046 ) )
+                    {
+                        SEL_DEFKEY( 14, 3 );
+                        
+                        if ( BIT_CHK( 312 ) )
+                        {
+                            var14 = SEL( VEL_M_SEL_5 );
+                        }
+                        else 
+                        {
+                            var14 = SEL( VELVET_SEL_5 );
+                        }
+
+                        
+                        if ( var14 == 0 )
+                        {
+                            MSG_WND_CLS();
+                            BIT_ON( 5127 );
+                            CALL_COMBINE_SHOP();
+                            BIT_OFF( 5127 );
+                        }
+                        else if ( var14 == 1 )
+                        {
+                            MSG_WND_CLS();
+                            BIT_ON( 5127 );
+                            FCL_FUNCTION_0014();
+                            BIT_OFF( 5127 );
+                        }
+                        else if ( var14 == 2 )
+                        {
+                            
+                            if ( BIT_CHK( 312 ) )
+                            {
+                                MSG( ERI_DATE_START_M );
+                            }
+                            else 
+                            {
+                                MSG( ERI_DATE_START );
+                            }
+
+                            MSG_WND_CLS();
+                            BIT_OFF( 5127 );
+                            FADE( 3, 0 );
+                            
+                            if ( BIT_CHK( 312 ) )
+                            {
+                                CALL_EVENT( 520, 411 );
+                            }
+                            else if ( BIT_CHK( 4103 ) )
+                            {
+                                CALL_EVENT( 520, 311 );
+                            }
+                            else 
+                            {
+                                CALL_EVENT( 520, 11 );
+                            }
+
+                            BIT_ON( 5046 );
+                            BIT_OFF( 5045 );
+                            BIT_ON( 4640 );
+                            BIT_ON( 3072 );
+                            FUNCTION_001E( 3, 8 );
+                            
+                            if ( BIT_CHK( 312 ) )
+                            {
+                                CALL_FIELD( 8, 18, 0, 0 );
+                            }
+                            else 
+                            {
+                                CALL_FIELD( 8, 17, 0, 0 );
+                            }
+
+                            return;
+                        }
+                        else if ( BIT_CHK( 312 ) )
+                        {
+                            MSG( GOODBAY_VEL_M_ROOM );
+                        }
+                        else 
+                        {
+                            MSG( GOODBAY_VELVET_ROOM );
+                        }
+
+                        MSG_WND_CLS();
+                        BIT_OFF( 4619 );
+                        BIT_OFF( 5127 );
+                        out_velvet_room();
+                        return;
+                    }
+                    else if ( BIT_CHK( 5047 ) && !BIT_CHK( 5048 ) )
+                    {
+                        SEL_DEFKEY( 14, 3 );
+                        
+                        if ( BIT_CHK( 312 ) )
+                        {
+                            var14 = SEL( VEL_M_SEL_5 );
+                        }
+                        else 
+                        {
+                            var14 = SEL( VELVET_SEL_5 );
+                        }
+
+                        
+                        if ( var14 == 0 )
+                        {
+                            MSG_WND_CLS();
+                            BIT_ON( 5127 );
+                            CALL_COMBINE_SHOP();
+                            BIT_OFF( 5127 );
+                        }
+                        else if ( var14 == 1 )
+                        {
+                            MSG_WND_CLS();
+                            BIT_ON( 5127 );
+                            FCL_FUNCTION_0014();
+                            BIT_OFF( 5127 );
+                        }
+                        else if ( var14 == 2 )
+                        {
+                            
+                            if ( BIT_CHK( 312 ) )
+                            {
+                                MSG( ERI_DATE_START_M );
+                            }
+                            else 
+                            {
+                                MSG( ERI_DATE_START );
+                            }
+
+                            MSG_WND_CLS();
+                            BIT_OFF( 5127 );
+                            FADE( 3, 0 );
+                            
+                            if ( BIT_CHK( 312 ) )
+                            {
+                                CALL_EVENT( 520, 430 );
+                            }
+                            else if ( BIT_CHK( 4103 ) )
+                            {
+                                CALL_EVENT( 520, 330 );
+                            }
+                            else 
+                            {
+                                CALL_EVENT( 520, 30 );
+                            }
+
+                            BIT_ON( 5048 );
+                            BIT_OFF( 5045 );
+                            BIT_ON( 4640 );
+                            BIT_ON( 3072 );
+                            FUNCTION_001E( 3, 8 );
+                            
+                            if ( BIT_CHK( 312 ) )
+                            {
+                                CALL_FIELD( 8, 18, 0, 0 );
+                            }
+                            else 
+                            {
+                                CALL_FIELD( 8, 17, 0, 0 );
+                            }
+
+                            return;
+                        }
+                        else if ( BIT_CHK( 312 ) )
+                        {
+                            MSG( GOODBAY_VEL_M_ROOM );
+                        }
+                        else 
+                        {
+                            MSG( GOODBAY_VELVET_ROOM );
+                        }
+
+                        MSG_WND_CLS();
+                        BIT_OFF( 4619 );
+                        BIT_OFF( 5127 );
+                        out_velvet_room();
+                        return;
+                    }
+                    else 
+                    {
+                        SEL_DEFKEY( 14, 2 );
+                        
+                        if ( BIT_CHK( 312 ) )
+                        {
+                            var14 = SEL( VEL_M_SEL_2 );
+                        }
+                        else 
+                        {
+                            var14 = SEL( VELVET_SEL_2 );
+                        }
+
+                        
+                        if ( var14 == 0 )
+                        {
+                            MSG_WND_CLS();
+                            BIT_ON( 5127 );
+                            CALL_COMBINE_SHOP();
+                            BIT_OFF( 5127 );
+                        }
+                        else if ( var14 == 1 )
+                        {
+                            MSG_WND_CLS();
+                            BIT_ON( 5127 );
+                            FCL_FUNCTION_0014();
+                            BIT_OFF( 5127 );
+                        }
+                        else if ( var14 == 2 )
+                        {
+                            
+                            if ( BIT_CHK( 312 ) )
+                            {
+                                MSG( GOODBAY_VEL_M_ROOM );
+                            }
+                            else 
+                            {
+                                MSG( GOODBAY_VELVET_ROOM );
+                            }
+
+                            MSG_WND_CLS();
+                            BIT_OFF( 4619 );
+                            BIT_OFF( 5127 );
+                            out_velvet_room();
+                            return;
+                        }
+
+                    }
+
+                }
+                else 
+                {
+                    SEL_DEFKEY( 14, 2 );
+                    
+                    if ( BIT_CHK( 312 ) )
+                    {
+                        var14 = SEL( VEL_M_SEL_2 );
+                    }
+                    else 
+                    {
+                        var14 = SEL( VELVET_SEL_2 );
+                    }
+
+                    
+                    if ( var14 == 0 )
+                    {
+                        MSG_WND_CLS();
+                        BIT_ON( 5127 );
+                        CALL_COMBINE_SHOP();
+                        BIT_OFF( 5127 );
+                    }
+                    else if ( var14 == 1 )
+                    {
+                        MSG_WND_CLS();
+                        BIT_ON( 5127 );
+                        FCL_FUNCTION_0014();
+                        BIT_OFF( 5127 );
+                    }
+                    else if ( var14 == 2 )
+                    {
+                        
+                        if ( BIT_CHK( 312 ) )
+                        {
+                            MSG( GOODBAY_VEL_M_ROOM );
+                        }
+                        else 
+                        {
+                            MSG( GOODBAY_VELVET_ROOM );
+                        }
+
+                        MSG_WND_CLS();
+                        BIT_OFF( 4619 );
+                        BIT_OFF( 5127 );
+                        out_velvet_room();
+                        return;
+                    }
+
+                }
+
+            }
+            else if ( BIT_CHK( 5045 ) && ( FUNCTION_0033() == 4 ) )
+            {
+                SEL_DEFKEY( 14, 3 );
+                
+                if ( BIT_CHK( 312 ) )
+                {
+                    gVar226 = SEL( VEL_M_SEL_4 );
+                }
+                else 
+                {
+                    gVar226 = SEL( VELVET_SEL_4 );
+                }
+
+                
+                if ( gVar226 == 0 )
+                {
+                    MSG_WND_CLS();
+                    BIT_ON( 5127 );
+                    CALL_COMBINE_SHOP();
+                    BIT_OFF( 5127 );
+                }
+                else if ( gVar226 == 1 )
+                {
+                    MSG_WND_CLS();
+                    BIT_ON( 5127 );
+                    FCL_FUNCTION_0014();
+                    BIT_OFF( 5127 );
+                }
+                else if ( gVar226 == 2 )
+                {
+                    
+                    if ( BIT_CHK( 312 ) )
+                    {
+                        MSG( ERI_DATE_START_M );
+                    }
+                    else 
+                    {
+                        MSG( ERI_DATE_START );
+                    }
+
+                    MSG_WND_CLS();
+                    BIT_OFF( 5127 );
+                    FADE( 3, 0 );
+                    
+                    if ( BIT_CHK( 312 ) )
+                    {
+                        
+                        if ( BIT_CHK( 5049 ) )
+                        {
+                            CALL_EVENT( 520, 451 );
+                            BIT_ON( 5050 );
+                        }
+                        else if ( BIT_CHK( 5048 ) )
+                        {
+                            CALL_EVENT( 520, 440 );
+                            BIT_ON( 5049 );
+                        }
+                        else if ( BIT_CHK( 5047 ) )
+                        {
+                            CALL_EVENT( 520, 430 );
+                            BIT_ON( 5048 );
+                        }
+                        else if ( BIT_CHK( 5046 ) )
+                        {
+                            CALL_EVENT( 520, 420 );
+                            BIT_ON( 5047 );
+                        }
+                        else 
+                        {
+                            CALL_EVENT( 520, 411 );
+                            BIT_ON( 5046 );
+                        }
+
+                    }
+                    else if ( BIT_CHK( 4103 ) )
+                    {
+                        
+                        if ( BIT_CHK( 5049 ) )
+                        {
+                            CALL_EVENT( 520, 351 );
+                            BIT_ON( 5050 );
+                        }
+                        else if ( BIT_CHK( 5048 ) )
+                        {
+                            CALL_EVENT( 520, 340 );
+                            BIT_ON( 5049 );
+                        }
+                        else if ( BIT_CHK( 5047 ) )
+                        {
+                            CALL_EVENT( 520, 330 );
+                            BIT_ON( 5048 );
+                        }
+                        else if ( BIT_CHK( 5046 ) )
+                        {
+                            CALL_EVENT( 520, 320 );
+                            BIT_ON( 5047 );
+                        }
+                        else 
+                        {
+                            CALL_EVENT( 520, 311 );
+                            BIT_ON( 5046 );
+                        }
+
+                    }
+                    else if ( BIT_CHK( 5049 ) )
+                    {
+                        CALL_EVENT( 520, 51 );
+                        BIT_ON( 5050 );
+                    }
+                    else if ( BIT_CHK( 5048 ) )
+                    {
+                        CALL_EVENT( 520, 40 );
+                        BIT_ON( 5049 );
+                    }
+                    else if ( BIT_CHK( 5047 ) )
+                    {
+                        CALL_EVENT( 520, 30 );
+                        BIT_ON( 5048 );
+                    }
+                    else if ( BIT_CHK( 5046 ) )
+                    {
+                        CALL_EVENT( 520, 20 );
+                        BIT_ON( 5047 );
+                    }
+                    else 
+                    {
+                        CALL_EVENT( 520, 11 );
+                        BIT_ON( 5046 );
+                    }
+
+                    BIT_OFF( 5045 );
+                    BIT_ON( 4640 );
+                    BIT_ON( 3072 );
+                    FUNCTION_001E( 3, 8 );
+                    
+                    if ( BIT_CHK( 312 ) )
+                    {
+                        CALL_FIELD( 8, 18, 0, 0 );
+                    }
+                    else 
+                    {
+                        CALL_FIELD( 8, 17, 0, 0 );
+                    }
+
+                    return;
+                }
+                else if ( BIT_CHK( 312 ) )
+                {
+                    MSG( GOODBAY_VEL_M_ROOM );
+                }
+                else 
+                {
+                    MSG( GOODBAY_VELVET_ROOM );
+                }
+
+                MSG_WND_CLS();
+                BIT_OFF( 4619 );
+                BIT_OFF( 5127 );
+                out_velvet_room();
+                return;
+            }
+            else if ( BIT_CHK( 5045 ) && ( FUNCTION_0033() == 3 ) )
+            {
+                
+                if ( !BIT_CHK( 5046 ) )
+                {
+                    SEL_DEFKEY( 14, 3 );
+                    
+                    if ( BIT_CHK( 312 ) )
+                    {
+                        var14 = SEL( VEL_M_SEL_4 );
+                    }
+                    else 
+                    {
+                        var14 = SEL( VELVET_SEL_4 );
+                    }
+
+                    
+                    if ( var14 == 0 )
+                    {
+                        MSG_WND_CLS();
+                        BIT_ON( 5127 );
+                        CALL_COMBINE_SHOP();
+                        BIT_OFF( 5127 );
+                    }
+                    else if ( var14 == 1 )
+                    {
+                        MSG_WND_CLS();
+                        BIT_ON( 5127 );
+                        FCL_FUNCTION_0014();
+                        BIT_OFF( 5127 );
+                    }
+                    else if ( var14 == 2 )
+                    {
+                        
+                        if ( BIT_CHK( 312 ) )
+                        {
+                            MSG( ERI_DATE_START_M );
+                        }
+                        else 
+                        {
+                            MSG( ERI_DATE_START );
+                        }
+
+                        MSG_WND_CLS();
+                        BIT_OFF( 5127 );
+                        FADE( 3, 0 );
+                        
+                        if ( BIT_CHK( 312 ) )
+                        {
+                            CALL_EVENT( 520, 411 );
+                        }
+                        else if ( BIT_CHK( 4103 ) )
+                        {
+                            CALL_EVENT( 520, 311 );
+                        }
+                        else 
+                        {
+                            CALL_EVENT( 520, 11 );
+                        }
+
+                        BIT_ON( 5046 );
+                        BIT_OFF( 5045 );
+                        BIT_ON( 4640 );
+                        BIT_ON( 3072 );
+                        FUNCTION_001E( 3, 8 );
+                        
+                        if ( BIT_CHK( 312 ) )
+                        {
+                            CALL_FIELD( 8, 18, 0, 0 );
+                        }
+                        else 
+                        {
+                            CALL_FIELD( 8, 17, 0, 0 );
+                        }
+
+                        return;
+                    }
+                    else if ( BIT_CHK( 312 ) )
+                    {
+                        MSG( GOODBAY_VEL_M_ROOM );
+                    }
+                    else 
+                    {
+                        MSG( GOODBAY_VELVET_ROOM );
+                    }
+
+                    MSG_WND_CLS();
+                    BIT_OFF( 4619 );
+                    BIT_OFF( 5127 );
+                    out_velvet_room();
+                    return;
+                }
+                else if ( BIT_CHK( 5047 ) && !BIT_CHK( 5048 ) )
+                {
+                    SEL_DEFKEY( 14, 3 );
+                    
+                    if ( BIT_CHK( 312 ) )
+                    {
+                        var14 = SEL( VEL_M_SEL_4 );
+                    }
+                    else 
+                    {
+                        var14 = SEL( VELVET_SEL_4 );
+                    }
+
+                    
+                    if ( var14 == 0 )
+                    {
+                        MSG_WND_CLS();
+                        BIT_ON( 5127 );
+                        CALL_COMBINE_SHOP();
+                        BIT_OFF( 5127 );
+                    }
+                    else if ( var14 == 1 )
+                    {
+                        MSG_WND_CLS();
+                        BIT_ON( 5127 );
+                        FCL_FUNCTION_0014();
+                        BIT_OFF( 5127 );
+                    }
+                    else if ( var14 == 2 )
+                    {
+                        
+                        if ( BIT_CHK( 312 ) )
+                        {
+                            MSG( ERI_DATE_START_M );
+                        }
+                        else 
+                        {
+                            MSG( ERI_DATE_START );
+                        }
+
+                        MSG_WND_CLS();
+                        BIT_OFF( 5127 );
+                        FADE( 3, 0 );
+                        
+                        if ( BIT_CHK( 312 ) )
+                        {
+                            CALL_EVENT( 520, 430 );
+                        }
+                        else if ( BIT_CHK( 4103 ) )
+                        {
+                            CALL_EVENT( 520, 330 );
+                        }
+                        else 
+                        {
+                            CALL_EVENT( 520, 30 );
+                        }
+
+                        BIT_ON( 5048 );
+                        BIT_OFF( 5045 );
+                        BIT_ON( 4640 );
+                        BIT_ON( 3072 );
+                        FUNCTION_001E( 3, 8 );
+                        
+                        if ( BIT_CHK( 312 ) )
+                        {
+                            CALL_FIELD( 8, 18, 0, 0 );
+                        }
+                        else 
+                        {
+                            CALL_FIELD( 8, 17, 0, 0 );
+                        }
+
+                        return;
+                    }
+                    else if ( BIT_CHK( 312 ) )
+                    {
+                        MSG( GOODBAY_VEL_M_ROOM );
+                    }
+                    else 
+                    {
+                        MSG( GOODBAY_VELVET_ROOM );
+                    }
+
+                    MSG_WND_CLS();
+                    BIT_OFF( 4619 );
+                    BIT_OFF( 5127 );
+                    out_velvet_room();
+                    return;
+                }
+                else 
+                {
+                    SEL_DEFKEY( 14, 2 );
+                    
+                    if ( BIT_CHK( 312 ) )
+                    {
+                        var14 = SEL( VEL_M_SEL_3 );
+                    }
+                    else 
+                    {
+                        var14 = SEL( VELVET_SEL_3 );
+                    }
+
+                    
+                    if ( var14 == 0 )
+                    {
+                        MSG_WND_CLS();
+                        BIT_ON( 5127 );
+                        CALL_COMBINE_SHOP();
+                        BIT_OFF( 5127 );
+                    }
+                    else if ( var14 == 1 )
+                    {
+                        MSG_WND_CLS();
+                        BIT_ON( 5127 );
+                        FCL_FUNCTION_0014();
+                        BIT_OFF( 5127 );
+                    }
+                    else if ( var14 == 2 )
+                    {
+                        
+                        if ( BIT_CHK( 312 ) )
+                        {
+                            MSG( GOODBAY_VEL_M_ROOM );
+                        }
+                        else 
+                        {
+                            MSG( GOODBAY_VELVET_ROOM );
+                        }
+
+                        MSG_WND_CLS();
+                        BIT_OFF( 4619 );
+                        BIT_OFF( 5127 );
+                        out_velvet_room();
+                        return;
+                    }
+
+                }
+
+            }
+            else 
+            {
+                SEL_DEFKEY( 14, 2 );
+                
+                if ( BIT_CHK( 312 ) )
+                {
+                    var14 = SEL( VEL_M_SEL_3 );
+                }
+                else 
+                {
+                    var14 = SEL( VELVET_SEL_3 );
+                }
+
+                
+                if ( var14 == 0 )
+                {
+                    MSG_WND_CLS();
+                    BIT_ON( 5127 );
+                    CALL_COMBINE_SHOP();
+                    BIT_OFF( 5127 );
+                }
+                else if ( var14 == 1 )
+                {
+                    MSG_WND_CLS();
+                    BIT_ON( 5127 );
+                    FCL_FUNCTION_0014();
+                    BIT_OFF( 5127 );
+                }
+                else if ( var14 == 2 )
+                {
+                    
+                    if ( BIT_CHK( 312 ) )
+                    {
+                        MSG( GOODBAY_VEL_M_ROOM );
+                    }
+                    else 
+                    {
+                        MSG( GOODBAY_VELVET_ROOM );
+                    }
+
+                    MSG_WND_CLS();
+                    BIT_OFF( 4619 );
+                    BIT_OFF( 5127 );
+                    out_velvet_room();
+                    return;
+                }
+
+            }
+
+        }
+
+        goto _505;
+    }
+
+}

@@ -1,0 +1,288 @@
+import( "field.msg" );
+
+// Procedure Index: 0
+void field_tbox_get_hook()
+{
+	int currentFloor;
+	currentFloor = FLD_FUNCTION_0004();
+    int var0;
+    int var1;
+    int var2;
+    int var3;
+    int var4;
+    int var5;
+    int var6;
+	int var46;
+	int var47;
+	int var9;
+    FLD_FUNCTION_0040();
+    MSG_WND_DSP();
+    
+    if ( FLD_FUNCTION_0027() == 1 )
+    {
+		_24:
+		var46 = RND( 99 );
+		if ( var46 >= 75 )
+		{
+			MSG(ARE_YOU_SURE);
+			var47 = SEL(YES_NO);
+			if ( var47 == 0 )
+			{
+				MSG_WND_CLS();
+				FUNCTION_001E( 4, 0 );
+				FUNCTION_004B();
+				FUNCTION_004C();
+				CALL_BATTLE( 506 );
+				WAIT_BATTLE();
+				var9 = FCL_FUNCTION_001E();
+				
+				if ( var9 )
+				{
+if ( (BIT_CHK(4104)) && ( GET_ITEM_NUM( 55 ) == 0 ) && ( GET_EQUIP( 1, 0 ) != 55 ) )// MC
+{
+	MSG_WND_DSP();
+    MSG( LUCIFER_BLADE_GET );
+	MSG_WND_CLS();
+}
+else if ( (BIT_CHK(4103)) && ( GET_ITEM_NUM( 318 ) == 0 ) && ( GET_EQUIP( 1, 0 ) != 318 ) ) // FEMC
+{
+	MSG_WND_DSP();
+    MSG( MURAGA_GET );
+	MSG_WND_CLS();
+} 
+else if ( ( gVar23 == 1 ) && ( GET_ITEM_NUM( 183 ) == 0 ) && ( GET_EQUIP( 2, 0 ) != 183 ) ) // Yukari
+{
+	MSG_WND_DSP();
+    MSG( QUIN_GET );
+	MSG_WND_CLS();
+}
+else if ( ( gVar24 == 1 ) && ( GET_ITEM_NUM( 214 ) == 0 ) && ( GET_EQUIP( 3, 0 ) != 214 ) ) // Aigis
+{
+	MSG_WND_DSP();
+    MSG( METATRON_GET );
+	MSG_WND_CLS();
+}
+else if ( ( gVar25 == 1 && GET_ITEM_NUM( 276 ) == 0 ) && ( GET_EQUIP( 4, 0 ) != 276 ) ) // Mitsuru
+{
+	MSG_WND_DSP();
+    MSG( SNOW_GET );
+	MSG_WND_CLS();
+}
+else if ( ( gVar26 == 1 && GET_ITEM_NUM( 24 ) == 0 ) && ( GET_EQUIP( 5, 0 ) != 24 ) ) // Junpei
+{
+	MSG_WND_DSP();
+    MSG( SURT_GET );
+	MSG_WND_CLS();
+}
+else if ( ( gVar27 == 1 && GET_ITEM_NUM( 87 ) == 0 ) && ( GET_EQUIP( 7, 0 ) != 87 ) ) // Akihiko
+{
+	MSG_WND_DSP();
+    MSG( EVIL_GET );
+	MSG_WND_CLS();
+}
+else if ( ( gVar28 == 1 && GET_ITEM_NUM( 151 ) == 0 ) && ( GET_EQUIP( 8, 0 ) != 151 ) ) // Ken
+{
+	MSG_WND_DSP();
+    MSG( STAFF_GET );
+	MSG_WND_CLS();
+}
+else if ( ( gVar29 == 1 && GET_ITEM_NUM( 118 ) == 0 ) && ( GET_EQUIP( 9, 0 ) != 118 ) ) // Shinjiro
+{
+	MSG_WND_DSP();
+    MSG( ROD_GET );
+	MSG_WND_CLS();
+}
+else if ( ( gVar30 == 1 && GET_ITEM_NUM( 245 ) == 0 ) && ( GET_EQUIP( 10, 0 ) != 245 ) ) // Koromaru
+{
+	MSG_WND_DSP();
+    MSG( KNIFE_GET );
+	MSG_WND_CLS();
+}
+else if ( (BIT_CHK(4104)) && ( GET_ITEM_NUM( 546 ) == 0 ) && ( GET_EQUIP( 1, 1 ) != 546 ) )// MC
+{
+	MSG_WND_DSP();
+    MSG( LIGHT_ARMOR_GET );
+	MSG_WND_CLS();
+}
+else if ( (BIT_CHK(4103)) && ( GET_ITEM_NUM( 546 ) == 0 ) && ( GET_EQUIP( 1, 1 ) != 546 ) ) // FEMC
+{
+	MSG_WND_DSP();
+    MSG( LIGHT_ARMOR_GET );
+	MSG_WND_CLS();
+} 
+else if ( ( gVar23 == 1 ) && ( GET_ITEM_NUM( 546 ) == 0 ) && ( GET_EQUIP( 2, 1 ) != 546 ) ) // Yukari
+{
+	MSG_WND_DSP();
+    MSG( LIGHT_ARMOR_GET );
+	MSG_WND_CLS();
+}
+else if ( ( gVar24 == 1 ) && ( GET_ITEM_NUM( 612 ) == 0 ) && ( GET_EQUIP( 3, 1 ) != 612 ) ) // Aigis
+{
+	MSG_WND_DSP();
+    MSG( ATHENA_GET );
+	MSG_WND_CLS();
+}
+else if ( ( gVar25 == 1 && GET_ITEM_NUM( 546 ) == 0 ) && ( GET_EQUIP( 4, 1 ) != 546 ) ) // Mitsuru
+{
+	MSG_WND_DSP();
+    MSG( LIGHT_ARMOR_GET );
+	MSG_WND_CLS();
+}
+else if ( ( gVar26 == 1 && GET_ITEM_NUM( 546 ) == 0 ) && ( GET_EQUIP( 5, 1 ) != 546 ) ) // Junpei
+{
+	MSG_WND_DSP();
+    MSG( LIGHT_ARMOR_GET );
+	MSG_WND_CLS();
+}
+else if ( ( gVar27 == 1 && GET_ITEM_NUM( 546 ) == 0 ) && ( GET_EQUIP( 7, 1 ) != 546 ) ) // Akihiko
+{
+	MSG_WND_DSP();
+    MSG( LIGHT_ARMOR_GET );
+	MSG_WND_CLS();
+}
+else if ( ( gVar28 == 1 && GET_ITEM_NUM( 546 ) == 0 ) && ( GET_EQUIP( 8, 1 ) != 546 ) ) // Ken
+{
+	MSG_WND_DSP();
+    MSG( LIGHT_ARMOR_GET );
+	MSG_WND_CLS();
+}
+else if ( ( gVar29 == 1 && GET_ITEM_NUM( 546 ) == 0 ) && ( GET_EQUIP( 9, 1 ) != 546 ) ) // Shinjiro
+{
+	MSG_WND_DSP();
+    MSG( LIGHT_ARMOR_GET );
+	MSG_WND_CLS();
+}
+else if ( ( gVar30 == 1 && GET_ITEM_NUM( 582 ) == 0 ) && ( GET_EQUIP( 10, 1 ) != 582 ) ) // Koromaru
+{
+	MSG_WND_DSP();
+    MSG( AURA_GET );
+	MSG_WND_CLS();
+}
+
+else if ( (BIT_CHK(4104)) && ( GET_ITEM_NUM( 795 ) == 0 ) && ( GET_EQUIP( 1, 2 ) != 795 ) )// MC
+{
+	MSG_WND_DSP();
+    MSG( LIGHT_SHOES_GET );
+	MSG_WND_CLS();
+}
+else if ( (BIT_CHK(4103)) && ( GET_ITEM_NUM( 795 ) == 0 ) && ( GET_EQUIP( 1, 2 ) != 795 ) ) // FEMC
+{
+	MSG_WND_DSP();
+    MSG( LIGHT_SHOES_GET );
+	MSG_WND_CLS();
+} 
+else if ( ( gVar23 == 1 ) && ( GET_ITEM_NUM( 795 ) == 0 ) && ( GET_EQUIP( 2, 2 ) != 795 ) ) // Yukari
+{
+	MSG_WND_DSP();
+    MSG( LIGHT_SHOES_GET );
+	MSG_WND_CLS();
+}
+else if ( ( gVar24 == 1 ) && ( GET_ITEM_NUM( 860 ) == 0 ) && ( GET_EQUIP( 3, 2 ) != 860 ) ) // Aigis
+{
+	MSG_WND_DSP();
+    MSG( SWAN_GET );
+	MSG_WND_CLS();
+}
+else if ( ( gVar25 == 1 && GET_ITEM_NUM( 795 ) == 0 ) && ( GET_EQUIP( 4, 2 ) != 795 ) ) // Mitsuru
+{
+	MSG_WND_DSP();
+    MSG( LIGHT_SHOES_GET );
+	MSG_WND_CLS();
+}
+else if ( ( gVar26 == 1 && GET_ITEM_NUM( 795 ) == 0 ) && ( GET_EQUIP( 5, 2 ) != 795 ) ) // Junpei
+{
+	MSG_WND_DSP();
+    MSG( LIGHT_SHOES_GET );
+	MSG_WND_CLS();
+}
+else if ( ( gVar27 == 1 && GET_ITEM_NUM( 795 ) == 0 ) && ( GET_EQUIP( 7, 2 ) != 795 ) ) // Akihiko
+{
+	MSG_WND_DSP();
+    MSG( LIGHT_SHOES_GET );
+	MSG_WND_CLS();
+}
+else if ( ( gVar28 == 1 && GET_ITEM_NUM( 795 ) == 0 ) && ( GET_EQUIP( 8, 2 ) != 795 ) ) // Ken
+{
+	MSG_WND_DSP();
+    MSG( LIGHT_SHOES_GET );
+	MSG_WND_CLS();
+}
+else if ( ( gVar29 == 1 && GET_ITEM_NUM( 795 ) == 0 ) && ( GET_EQUIP( 9, 2 ) != 795 ) ) // Shinjiro
+{
+	MSG_WND_DSP();
+    MSG( LIGHT_SHOES_GET );
+	MSG_WND_CLS();
+}
+else
+{
+	return;
+}
+
+FCL_FUNCTION_0004( currentFloor );
+return;
+				}
+						
+			}
+			else
+			{
+				return;
+			}
+		}
+		else
+		{
+			MSG(OPEN_RARE_TBOX);
+		}
+	}
+
+    var0 = FUNCTION_0018( 11, 0 );
+    var1 = 0;
+    
+    if ( FLD_FUNCTION_0035() == 0 )
+    {
+        var1 = FLD_FUNCTION_000A();
+        var2 = FLD_FUNCTION_000C();
+        SET_MSG_VAR( 0, var1, 1 );
+        SET_MSG_VAR( 1, var2, 0 );
+        MSG( GET_ITEM_MES );
+    }
+    else 
+    {
+        var3 = ( RND( 199 ) + 1 );
+        var4 = ( RND( 2999 ) + 100 );
+        var5 = ( ( RND( 599 ) + 100 ) / 100 );
+        
+        if ( var3 <= 100 )
+        {
+            var6 = ( FLD_FUNCTION_0035() - ( ( FLD_FUNCTION_0035() * var4 ) / 10000 ) );
+        }
+        else 
+        {
+            var6 = ( FLD_FUNCTION_0035() + ( ( FLD_FUNCTION_0035() * var4 ) / 10000 ) );
+        }
+
+        
+        if ( var5 == 5 )
+        {
+            var6 = ( var6 / 10 );
+        }
+        else if ( var5 == 6 )
+        {
+            var6 = ( var6 * 2 );
+        }
+
+        ADD_PC_MONEY( var6 );
+        SET_MSG_VAR( 2, var6, 0 );
+        MSG( GET_MONEY_MES );
+    }
+
+    MSG_WND_CLS();
+    FUNCTION_001A( var0 );
+    FLD_FUNCTION_000E();
+    
+    if ( var1 != 0 )
+    {
+        SET_ITEM_NUM( var1, ( GET_ITEM_NUM( var1 ) + var2 ) );
+    }
+
+    FUNCTION_001A( var0 );
+}

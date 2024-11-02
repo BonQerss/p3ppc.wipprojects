@@ -1,0 +1,9 @@
+import( "field.msg" );
+import( "FuukaRadio.flow" );
+
+// Procedure Index: 14
+void order_to_change_bgm_hook()
+{
+	fuuka_expanded_radio();
+}
+

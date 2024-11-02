@@ -1,0 +1,134 @@
+// Procedure Index: 20
+void check_party_member_hook()
+{
+
+
+
+
+    int var58;
+    gVar21 = 0;
+    gVar22 = 0;
+    gVar100 = 0;
+    gVar23 = 0;
+    gVar24 = 0;
+    gVar25 = 0;
+    gVar26 = 0;
+    gVar27 = 0;
+    gVar28 = 0;
+    gVar29 = 0;
+    gVar30 = 0;
+    var58 = 0;
+    _295:
+    
+    if ( var58 < 3 )
+    {
+        
+        if ( FLD_FUNCTION_0028( var58 ) == 1 )
+        {
+            gVar100 = ( gVar100 + 1 );
+        }
+
+        var58 = ( var58 + 1 );
+        goto _295;
+    }
+
+    var58 = 0;
+    _299:
+    
+    if ( var58 < 3 )
+    {
+        
+        if ( FUNCTION_0042( var58 ) == 2 )
+        {
+            gVar21 = ( gVar21 + 1 );
+            gVar23 = 1;
+            
+            if ( GET_HP( 2 ) == 0 )
+            {
+                gVar22 = ( gVar22 + 1 );
+            }
+
+        }
+        else if ( FUNCTION_0042( var58 ) == 3 )
+        {
+            gVar21 = ( gVar21 + 1 );
+            gVar24 = 1;
+            
+            if ( GET_HP( 3 ) == 0 )
+            {
+                gVar22 = ( gVar22 + 1 );
+            }
+
+        }
+        else if ( FUNCTION_0042( var58 ) == 4 )
+        {
+            gVar21 = ( gVar21 + 1 );
+            gVar25 = 1;
+            
+            if ( GET_HP( 4 ) == 0 )
+            {
+                gVar22 = ( gVar22 + 1 );
+            }
+
+        }
+        else if ( FUNCTION_0042( var58 ) == 5 )
+        {
+            gVar21 = ( gVar21 + 1 );
+            gVar26 = 1;
+            
+            if ( GET_HP( 5 ) == 0 )
+            {
+                gVar22 = ( gVar22 + 1 );
+            }
+
+        }
+        else if ( FUNCTION_0042( var58 ) == 7 )
+        {
+            gVar21 = ( gVar21 + 1 );
+            gVar27 = 1;
+            
+            if ( GET_HP( 7 ) == 0 )
+            {
+                gVar22 = ( gVar22 + 1 );
+            }
+
+        }
+        else if ( FUNCTION_0042( var58 ) == 8 )
+        {
+            gVar21 = ( gVar21 + 1 );
+            gVar28 = 1;
+            
+            if ( GET_HP( 8 ) == 0 )
+            {
+                gVar22 = ( gVar22 + 1 );
+            }
+
+        }
+        else if ( FUNCTION_0042( var58 ) == 9 )
+        {
+            gVar21 = ( gVar21 + 1 );
+            gVar29 = 1;
+            
+            if ( GET_HP( 9 ) == 0 )
+            {
+                gVar22 = ( gVar22 + 1 );
+            }
+
+        }
+        else if ( FUNCTION_0042( var58 ) == 10 )
+        {
+            gVar21 = ( gVar21 + 1 );
+            gVar30 = 1;
+            
+            if ( GET_HP( 10 ) == 0 )
+            {
+                gVar22 = ( gVar22 + 1 );
+            }
+
+        }
+
+        var58 = ( var58 + 1 );
+        goto _299;
+    }
+
+}

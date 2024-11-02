@@ -1,0 +1,31 @@
+// Procedure Index: 0
+void f010_002_init_hook()
+{
+    BGM_STOP( 0 );
+	BGM( 129 );
+    if ( EVT_FUNCTION_0032() == 0 )
+    {
+        
+        if ( BIT_CHK( 4595 ) )
+        {
+            BIT_OFF( 3330 );
+        }
+        else 
+        {
+            BIT_ON( 3330 );
+        }
+
+        
+        if ( BIT_CHK( 4589 ) )
+        {
+            BIT_OFF( 3331 );
+        }
+        else 
+        {
+            BIT_ON( 3331 );
+        }
+
+    }
+
+}
+

@@ -1,0 +1,5 @@
+[msg MARGARET_FIRST [Margaret]]
+[s][bup 75 161 0 0]You whiny little shit.[n][w][e]
+[s]You spent all day worrying[n]about my hair.[n][w][e]
+[s]Do you ever go outside?[n]Ever touch grass?[n][w][e]
+[s]Enough talking.[n]Prove your worth.[n][w][e]

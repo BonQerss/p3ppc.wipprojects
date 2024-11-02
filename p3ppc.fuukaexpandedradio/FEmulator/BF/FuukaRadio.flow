@@ -1,0 +1,492 @@
+import( "Utils.flow" );
+
+void fuuka_expanded_radio()
+{
+    int var19;
+	int var18;
+	int var17;
+    int var16;
+    int var15;
+	int var14;
+	int var46;
+	int playSong;
+	
+
+	const int p5r_len = 20;
+    const int p4g_len = 9;
+    const int p3r_len = 6;
+    const int p3f_len = 7;
+    const int p5r_start = 769;
+	const int p4g_start = 789;
+    const int p3r_start = 798;
+    const int p3f_start = 804;
+	
+	
+    
+    if ( GET_COUNT( 1 ) == 0 )
+    {
+        var16 = 0x10;
+    }
+    else if ( GET_COUNT( 1 ) == 102 )
+    {
+        var16 = 1;
+    }
+    else if ( GET_COUNT( 1 ) == 103 )
+    {
+        var16 = 2;
+    }
+    else if ( GET_COUNT( 1 ) == 104 )
+    {
+        var16 = 4;
+    }
+    else if ( GET_COUNT( 1 ) == 105 )
+    {
+        var16 = 8;
+    }
+
+	_410:
+    MSG( HUKA_ORDER_BGM_CHANGE );
+    FUNCTION_0006( var16 );
+    SEL_DEFKEY( 14, 5 );
+    var15 = SEL( BGM_SEL );
+    
+    if ( var15 != 5 )
+    {
+        MSG_WND_DSP();
+        
+        if ( var15 != 4 )
+        {
+            
+            if (var15 == 0) // Persona
+            {
+                int page = 1;
+                bool exit = false;
+
+                while (!exit)
+                {
+                    switch (page)
+                    {
+                        case 1:
+                            SEL_DEFKEY(14, 6);
+                            SEL_DEFKEY(7, 4);  // Right
+                            var14 = SEL(BGM_SEL_PS);
+
+                            switch (var14)
+                            {
+                                case 0: // P5R
+                                    songselect(p5r_len, p5r_start, BGM_SEL_P5R);
+                                    break;
+                                case 1: // P4G
+                                    songselect(p4g_len, p4g_start, BGM_SEL_P4G);
+                                    break;
+                                case 2: // P3R
+                                    songselect(p3r_len, p3r_start, BGM_SEL_P3R);
+                                    break;
+                                case 3: // P3F
+                                    songselect(p3f_len, p3f_start, BGM_SEL_P3F);
+                                    break;
+                                case 4: // Next Page
+                                    page = 2;
+                                    break;
+                                case 6: // Back
+                                    exit = true;
+                                    break;
+                            }
+                            break;
+
+                        case 2:
+                            SEL_DEFKEY(14, 7);
+                            SEL_DEFKEY(5, 5);  // Left
+                            SEL_DEFKEY(7, 4);  // Right
+                            var18 = SEL(BGM_SEL_PS_2);
+
+                            switch (var18)
+                            {
+                                case 0: // Persona 1 (PS1)
+                                    // Add corresponding action here
+                                    break;
+                                case 1: // Persona 1 (PSP)
+                                    // Add corresponding action here
+                                    break;
+                                case 2: // Persona 2: Innocent Sin
+                                    // Add corresponding action here
+                                    break;
+                                case 3: // Persona 2: Eternal Punishment
+                                    // Add corresponding action here
+                                    break;
+                                case 4: // Next Page
+                                    page = 3;
+                                    break;
+                                case 5: // Prev Page
+                                    page = 1;
+                                    break;
+                                case 7: // Back
+                                    exit = true;
+                                    break;
+                            }
+                            break;
+
+                        case 3:
+                            SEL_DEFKEY(14, 5);
+                            SEL_DEFKEY(5, 3);  // Left
+                            var19 = SEL(BGM_SEL_PS_3);
+
+                            switch (var19)
+                            {
+                                case 0: // Persona Q
+                                    // Add corresponding action here
+                                    break;
+                                case 1: // Persona Q2
+                                    // Add corresponding action here
+                                    break;
+                                case 2: // Persona 5 Strikers
+                                    // Add corresponding action here
+                                    break;
+                                case 3: // Prev Page
+                                    page = 2;
+                                    break;
+                                case 5: // Back
+                                    exit = true;
+                                    break;
+                            }
+                            break;
+                    }
+                }
+            }
+
+
+            else if ( var15 == 1 ) // Shin Megami Tensei
+            {
+                SMT_BACK:
+                SEL_DEFKEY( 14, 4 );
+				var14 = SEL( BGM_SEL_SMT );
+				
+				if ( var14 == 0 ) // SMT V
+				{
+					int currentPage = 0;
+					int selection;
+					int SMTVBaseMask = 655328;
+					int SMTVMask;
+					SMTV_BACK:
+					SMTVMask = SMTVBaseMask;
+					int currentSong = GET_COUNT(1);
+					switch (currentSong)
+					{
+						case 0:
+							var17 = 0;
+							break;
+						case 811:
+							var17 = 1;
+							break;
+						case 812:
+							var17 = 2;
+							break;
+						case 813:
+							var17 = 4;
+							break;
+						case 814:
+							var17 = 8;
+							break;
+						case 815:
+							var17 = 16;
+							break;
+						case 816:
+							var17 = 32;
+							break;
+						case 817:
+							var17 = 64;
+							break;
+						case 818:
+							var17 = 128;
+							break;
+						case 819:
+							var17 = 256;
+							break;
+						case 820:
+							var17 = 512;
+							break;
+						case 821:
+							var17 = 1024;
+							break;
+						case 822:
+							var17 = 2048;
+							break;
+						case 823:
+							var17 = 4096;
+							break;
+						case 824:
+							var17 = 8192;
+							break;
+						case 825:
+							var17 = 16384;
+							break;
+						case 826:
+							var17 = 32768;
+							break;
+						case 827:
+							var17 = 65536;
+							break;
+					}
+					switch (currentPage)
+					{
+						case 0:
+							if ((currentSong >= 811) && (currentSong <= 815)) 
+							{
+								SMTVMask += var17;
+							}
+							break;
+						case 1:
+							if ((currentSong >= 816) && (currentSong <= 819)) 
+							{
+								SMTVMask += var17;
+							}
+							break;
+						case 2:
+							if ((currentSong >= 820) && (currentSong <= 823)) 
+							{
+								SMTVMask += var17;
+							}
+							break;
+						case 3:
+							if ((currentSong >= 824) && (currentSong <= 827)) 
+							{
+								SMTVMask += var17;
+							}
+							break;
+					}
+					SEL_DEFKEY( 14, 20 );
+					FUNCTION_0006( SMTVMask );
+					MSG_WND_DSP();
+					selection = SEL( BGM_SEL_SMTV );
+					switch ( selection )
+					{
+					case 0://Takanawa
+						SET_COUNT( 1, 811 );
+						BGM( 811 );
+						break;
+					case 1://Tamachi
+						SET_COUNT( 1, 812 );
+						BGM( 812 );
+						break;
+					case 2://West Shinbashi
+						SET_COUNT( 1, 813 );
+						BGM( 813 );
+						break;
+					case 3://Tokyo Diet Building
+						SET_COUNT( 1, 814 );
+						BGM( 814 );
+						break;
+					case 4://Tennozu
+						SET_COUNT( 1, 815 );
+						BGM( 815 );
+						break;
+					case 5://Konan
+						SET_COUNT( 1, 816 );
+						BGM( 816 );
+						break;
+					case 6://Shinagawa Station
+						SET_COUNT( 1, 817 );
+						BGM( 817 );
+						break;
+					case 7://Ginza
+						SET_COUNT( 1, 818 );
+						BGM( 818 );
+						break;
+					case 8://Kanda Myoujin
+						SET_COUNT( 1, 819 );
+						BGM( 819 );
+						break;
+					case 9://Tokyo Station
+						SET_COUNT( 1, 820 );
+						BGM( 820 );
+						break;
+					case 10://Odaiba
+						SET_COUNT( 1, 821 );
+						BGM( 821 );
+						break;
+					case 11://Ueno
+						SET_COUNT( 1, 822 );
+						BGM( 822 );
+						break;
+					case 12://Fairy Village
+						SET_COUNT( 1, 823 );
+						BGM( 823 );
+						break;
+					case 13://Demon King's Castle
+						SET_COUNT( 1, 824 );
+						BGM( 824 );
+						break;
+					case 14://Temple of Eternity
+						SET_COUNT( 1, 825 );
+						BGM( 825 );
+						break;
+					case 15://The Empyrean
+						SET_COUNT( 1, 826 );
+						BGM( 826 );
+						break;
+					case 16://Jouin High Sc
+						SET_COUNT( 1, 827 );
+						BGM( 827 );
+						break;
+					case 17://Random
+						var46 = RND(17);
+						playSong = ( 810 + var46 );
+						SET_COUNT( 1, playSong);
+						BGM( playSong );
+						break;
+					case 18://Next Page
+						if ( currentPage == 0 )
+						{
+							currentPage = 1;
+							SMTVBaseMask = 130591;
+						}
+						else if ( currentPage == 1 )
+						{
+							currentPage = 2;
+							SMTVBaseMask = 123391;
+						}
+						else if ( currentPage == 2 )
+						{
+							currentPage = 3;
+							SMTVBaseMask = 270335;
+						}
+						goto SMTV_BACK;
+						break;
+						
+					case 19://Previous Page
+						if ( currentPage == 3 )
+						{
+							currentPage = 2;
+							SMTVBaseMask = 123391;
+						}
+						else if ( currentPage == 2 )
+						{
+							currentPage = 1;
+							SMTVBaseMask = 130591;
+						}
+						else if ( currentPage == 1 )
+						{
+							currentPage = 0;
+							SMTVBaseMask = 655328;
+						}
+						goto SMTV_BACK;
+						break;
+
+					case 20://Back
+						goto SMT_BACK;
+						break;
+							}
+						}
+				
+				if ( var14 == 2 ) // SMT 3
+				{
+				}
+				if ( var14 == 3 ) // Pick for me
+				{
+					var46 = RND(12);
+					playSong = ( 810 + var46 );
+					SET_COUNT( 1, playSong );
+					BGM( playSong );
+				}
+				
+			}
+            else if ( var15 == 2 ) // SMT Spin Off
+            {
+                SET_COUNT( 1, 104 );
+                BGM( 104 );
+            }
+            else if ( var15 == 3 ) // Random
+            {
+                var46 = RND(54);
+				playSong = ( 768 + var46 );
+				SET_COUNT( 1, playSong );
+				BGM( playSong );
+            }
+
+            
+            if ( var16 == 48 )
+            {
+                MSG( HUKA_ORDER_BGM_START_DON );
+            }
+            else 
+            {
+                MSG( HUKA_ORDER_BGM_CHANGE_DO );
+            }
+
+        }
+        else if ( var15 == 4 ) // Stop the Music
+        {
+            SET_COUNT( 1, 0 );
+            
+            if ( FLD_FUNCTION_0046() == 1 )
+            {
+                
+                if ( ( FLD_FUNCTION_0004() >= 2 ) && ( FLD_FUNCTION_0004() <= 20 ) )
+                {
+                    BGM( 94 );
+                }
+                else if ( ( FLD_FUNCTION_0004() >= 21 ) && ( FLD_FUNCTION_0004() <= 40 ) )
+                {
+                    BGM( 95 );
+                }
+                else if ( ( FLD_FUNCTION_0004() >= 41 ) && ( FLD_FUNCTION_0004() <= 70 ) )
+                {
+                    BGM( 96 );
+                }
+                else if ( ( FLD_FUNCTION_0004() >= 71 ) && ( FLD_FUNCTION_0004() <= 100 ) )
+                {
+                    BGM( 97 );
+                }
+                else if ( ( FLD_FUNCTION_0004() >= 101 ) && ( FLD_FUNCTION_0004() <= 130 ) )
+                {
+                    BGM( 98 );
+                }
+                else if ( ( FLD_FUNCTION_0004() >= 131 ) && ( FLD_FUNCTION_0004() <= 160 ) )
+                {
+                    BGM( 99 );
+                }
+                else if ( ( FLD_FUNCTION_0004() >= 160 ) && ( FLD_FUNCTION_0004() <= 190 ) )
+                {
+                    BGM( 100 );
+                }
+
+            }
+            else if ( ( ( FLD_FUNCTION_0004() >= 2 ) && ( FLD_FUNCTION_0004() <= 0x10 ) ) || ( ( FLD_FUNCTION_0004() >= 290 ) && ( FLD_FUNCTION_0004() <= 299 ) ) )
+            {
+                BGM( 1 );
+            }
+            else if ( ( FLD_FUNCTION_0004() >= 17 ) && ( FLD_FUNCTION_0004() <= 0x40 ) )
+            {
+                BGM( 70 );
+            }
+            else if ( ( FLD_FUNCTION_0004() >= 65 ) && ( FLD_FUNCTION_0004() <= 114 ) )
+            {
+                BGM( 81 );
+            }
+            else if ( ( FLD_FUNCTION_0004() >= 115 ) && ( FLD_FUNCTION_0004() <= 164 ) )
+            {
+                BGM( 72 );
+            }
+            else if ( ( FLD_FUNCTION_0004() >= 164 ) && ( FLD_FUNCTION_0004() <= 214 ) )
+            {
+                BGM( 73 );
+            }
+            else if ( ( FLD_FUNCTION_0004() >= 215 ) && ( FLD_FUNCTION_0004() <= 254 ) )
+            {
+                BGM( 74 );
+            }
+            else if ( ( FLD_FUNCTION_0004() >= 255 ) && ( FLD_FUNCTION_0004() <= 263 ) )
+            {
+                BGM( 75 );
+            }
+
+            MSG( HUKA_ORDER_BGM_CHANGE_RE );
+        }
+
+    }
+
+    MSG_WND_CLS();
+    FUNCTION_0065( 0 );
+}
+
+

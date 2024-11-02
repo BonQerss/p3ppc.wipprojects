@@ -1,0 +1,129 @@
+
+import( "n15_28.msg" );
+
+// Procedure Index: 0
+void margaret_hook()
+{
+    int var0;
+    var0 = 0;
+    
+    if ( BIT_CHK( 3299 ) )
+    {
+        var0 = ( var0 + 1 );
+    }
+
+    
+    if ( BIT_CHK( 3300 ) )
+    {
+        var0 = ( var0 + 1 );
+    }
+
+    
+    if ( BIT_CHK( 3301 ) )
+    {
+        var0 = ( var0 + 1 );
+    }
+
+    
+    if ( BIT_CHK( 3302 ) )
+    {
+        var0 = ( var0 + 1 );
+    }
+
+    
+    if ( BIT_CHK( 3303 ) )
+    {
+        var0 = ( var0 + 1 );
+    }
+
+    
+    if ( BIT_CHK( 3304 ) )
+    {
+        var0 = ( var0 + 1 );
+    }
+
+    
+    if ( BIT_CHK( 3305 ) )
+    {
+        var0 = ( var0 + 1 );
+    }
+
+    
+    if ( BIT_CHK( 3306 ) )
+    {
+        var0 = ( var0 + 1 );
+    }
+
+    
+    if ( BIT_CHK( 3307 ) )
+    {
+        var0 = ( var0 + 1 );
+    }
+
+    
+    if ( BIT_CHK( 3308 ) )
+    {
+        var0 = ( var0 + 1 );
+    }
+
+    
+    if ( BIT_CHK( 3309 ) )
+    {
+        var0 = ( var0 + 1 );
+    }
+
+    
+    if ( BIT_CHK( 3310 ) )
+    {
+        var0 = ( var0 + 1 );
+    }
+
+    
+    if ( BIT_CHK( 3311 ) )
+    {
+        var0 = ( var0 + 1 );
+    }
+
+    MSG_WND_DSP();
+    
+    if ( var0 >= 12 )
+    {
+        MSG( MARGARET_6th );
+    }
+    else if ( var0 >= 7 )
+    {
+        MSG( MARGARET_5th );
+    }
+    else if ( var0 >= 4 )
+    {
+        MSG( MARGARET_4th );
+    }
+    else if ( var0 >= 2 )
+    {
+        MSG( MARGARET_3rd );
+    }
+    else if ( var0 >= 1 )
+    {
+        MSG( MARGARET_2nd );
+    }
+    else 
+    {
+		EVT_FUNCTION_003B( 0, 46 );
+        MSG( MARGARET_FIRST );
+		MSG_WND_CLS();
+		WAIT( 30 );
+		FUNCTION_0013( 20 );
+		EVT_FUNCTION_003C( 0, 0 );
+		FUNCTION_0013( 33 );
+        WAIT( 30 );
+        FUNCTION_001E( 4, 0 );
+        FUNCTION_004B();
+        FUNCTION_004C();
+        CALL_BATTLE( 453 );
+        WAIT_BATTLE();
+		CALL_FIELD( 15, 28, 0, 0 );
+		return;
+    }
+
+    MSG_WND_CLS();
+}

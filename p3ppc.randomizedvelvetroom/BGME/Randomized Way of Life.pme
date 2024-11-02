@@ -1,0 +1,3 @@
+global_bgm[124]:
+  music = random_song(8013, 8015)
+end
