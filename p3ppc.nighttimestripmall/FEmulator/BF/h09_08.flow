@@ -1,0 +1,478 @@
+import( "h09_08.msg" );
+import( "utils.flow" );
+import( "buybulk.msg" );
+
+
+
+// Procedure Index: 33
+void comu_restaurant_hook()
+{
+    int var58 = 2;
+    MSG_WND_DSP();
+    MSG( WASHOKU_ANNOUNCE );
+    
+    if ( CHK_DAYS_STARTEND( 2, 1, 3, 31 ) )
+    {
+        MSG( WASHOKU_TEIKYU );
+        MSG_WND_CLS();
+        return;
+    }
+    
+    if ( FUNCTION_0032() == 2 )
+    {
+        MSG( WASHOKU_TEIKYU );
+        MSG_WND_CLS();
+        return;
+    }
+    
+    if ( !BIT_CHK( 2592 ) )
+    {
+        MSG_WND_CLS();
+        FUNCTION_002D( 21 );
+        BIT_ON( 2592 );
+        MSG_WND_DSP();
+    }
+
+    MSG( WASHOKU_HAIRU );
+    
+    if ( ( FLD_FUNCTION_003F( 1, 0 ) >= 3 ) && ( FUNCTION_0032() == 1 || FUNCTION_0032() == 4 || FUNCTION_0032() == 5 || FUNCTION_0032() == 7 ) )
+    {
+        MSG( WASHOKU_HAIRU_ALSO );
+        var58 -= 2;
+    }
+    
+    if ( !BIT_CHK( 1464 ) )
+    {
+        MSG_WND_CLS();
+        FUNCTION_002D( 37 );
+        BIT_ON( 1464 );
+        MSG_WND_DSP();
+    }
+
+    if ( FLD_FUNCTION_003F( 1, 0 ) == 6 )
+    {
+        MSG( GAKURYOKU_MAX_NG );
+    }
+
+    MSG( WHATTOORDER );
+    FUNCTION_0006( var58 );
+    SEL_DEFKEY( 14, 2 );
+    int SEL_CHOICE = SEL( RAMEN_SEL2 );
+
+    if ( SEL_CHOICE == 0 )
+    {
+        MSG( WASHOKU_HAIRU02 );
+        SEL_DEFKEY( 14, 1 );
+
+        if ( SEL( YESNO_SEL ) == 0 )
+        {
+            if ( ADD_PC_MONEY( 0 ) < 680 )
+            {
+                MSG( MONEY_TARINAI );
+                MSG_WND_CLS();
+                return;
+            }
+            else
+            {
+                MSG_WND_CLS();
+                ADD_PC_MONEY( -680 );
+                WAIT( 10 );
+                FUNCTION_001E( 3, 1 );
+                FADE( 3, 0 );
+                BIT_ON( 2606 );
+                CALL_EVENT( 842, 4 );
+                CALL_FIELD( 9, 8, 3, 0 );
+                return;
+            }
+        }
+    }
+    else if ( SEL_CHOICE == 1 )
+    {
+        MSG( WASHOKU_HAIRU02 );
+        SEL_DEFKEY( 14, 1 );
+
+        if ( SEL( YESNO_SEL ) == 0 )
+        {
+            if ( ADD_PC_MONEY( 0 ) < 950 )
+            {
+                MSG( MONEY_TARINAI );
+                MSG_WND_CLS();
+                return;
+            }
+            else
+            {
+                MSG_WND_CLS();
+                ADD_PC_MONEY( -950 );
+                WAIT( 10 );
+                FUNCTION_001E( 3, 1 );
+                FADE( 3, 0 );
+                BIT_ON( 2606 );
+                CALL_EVENT( 842, 10 );
+                CALL_FIELD( 9, 8, 3, 0 );
+                return;
+            }
+        }
+    }
+    else if ( SEL_CHOICE == 2 )
+    {
+        return;
+    }
+}
+
+// Procedure Index: 35
+void comu_ramen_shop_hook()
+{
+    int var58 = 2;
+    MSG_WND_DSP();
+    MSG( RAMEN_ANNOUNCE );
+    
+    if ( CHK_DAYS_STARTEND( 2, 1, 3, 31 ) )
+    {
+        MSG( RAMEN_TEIKYU );
+        MSG_WND_CLS();
+        return;
+    }
+    
+    if ( FUNCTION_0032() == 6 || FUNCTION_0032() == 7 )
+    {
+        MSG( RAMEN_TEIKYU );
+        MSG_WND_CLS();
+        return;
+    }
+    
+    if ( !BIT_CHK( 2592 ) )
+    {
+        MSG_WND_CLS();
+        FUNCTION_002D( 21 );
+        BIT_ON( 2592 );
+        MSG_WND_DSP();
+    }
+
+    MSG( RAMEN_HAIRU );
+    
+    if ( FLD_FUNCTION_003F( 2, 0 ) >= 3 && ( FUNCTION_0032() == 2 || FUNCTION_0032() == 3 || FUNCTION_0032() == 5 ) )
+    {
+        MSG( RAMEN_HAIRU_ALSO );
+        var58 -= 2;
+    }
+    
+    if ( !BIT_CHK( 1465 ) )
+    {
+        MSG_WND_CLS();
+        FUNCTION_002D( 42 );
+        BIT_ON( 1465 );
+        MSG_WND_DSP();
+    }
+
+    if ( FLD_FUNCTION_003F( 1, 1 ) == 6 )
+    {
+        MSG( MIRYOKU_MAX_NG );
+    }
+
+    MSG( WHATTOORDER );
+    FUNCTION_0006( var58 );
+    SEL_DEFKEY( 14, 2 );
+    int SEL_CHOICE = SEL( RAMENREAL_SEL2 );
+
+    if ( SEL_CHOICE == 0 )
+    {
+        MSG( RAMEN_HAIRU02 );
+        SEL_DEFKEY( 14, 1 );
+
+        if ( SEL( YESNO_SEL ) == 0 )
+        {
+            if ( ADD_PC_MONEY( 0 ) < 900 )
+            {
+                MSG( MONEY_TARINAI );
+                MSG_WND_CLS();
+                return;
+            }
+            else
+            {
+                MSG_WND_CLS();
+                ADD_PC_MONEY( -900 );
+                WAIT( 10 );
+                FUNCTION_001E( 3, 1 );
+                FADE( 3, 0 );
+                BIT_ON( 2606 );
+                CALL_EVENT( 842, 3 );
+                CALL_FIELD( 9, 8, 2, 0 );
+                return;
+            }
+        }
+    }
+    else if ( SEL_CHOICE == 1 )
+    {
+        MSG( WASHOKU_HAIRU02 );
+        SEL_DEFKEY( 14, 1 );
+
+        if ( SEL( YESNO_SEL ) == 0 )
+        {
+            if ( ADD_PC_MONEY( 0 ) < 1100 )
+            {
+                MSG( MONEY_TARINAI );
+                MSG_WND_CLS();
+                return;
+            }
+            else
+            {
+                MSG_WND_CLS();
+                ADD_PC_MONEY( -1100 );
+                WAIT( 10 );
+                FUNCTION_001E( 3, 1 );
+                FADE( 3, 0 );
+                BIT_ON( 2606 );
+                CALL_EVENT( 842, 11 );
+                CALL_FIELD( 9, 8, 2, 0 );
+                return;
+            }
+        }
+    }
+    else
+    {
+        return;
+    }
+}
+
+
+void comu_sweet_shop_hook()
+{
+    MSG_WND_DSP();
+	if ( FUNCTION_0033() == 5 )
+	{
+		MSG( KANMI_SETUMEI_N );
+	}
+	else
+	{
+		MSG( KANMI_SETUMEI );
+	}
+    MSG_WND_CLS();
+}
+
+
+// Procedure Index: 38
+void comu_comics_coffee_shop_hook()
+{
+    MSG_WND_DSP();
+	if ( FUNCTION_0033() == 5 )
+	{
+		MSG( MANGA_SETUMEI_N );
+	}
+	else
+	{
+		MSG( MANGA_SETUMEI );
+	}
+    MSG_WND_CLS();
+	
+	int randomChance = RND(40231);
+	
+	if ( randomChance == 1001 )
+	{
+		MSG_WND_DSP();
+		MSG(MAGICAL);
+		MSG_WND_CLS();
+	}
+}
+
+
+void comu_beef_bowl_bar_hook()
+{
+	if ( CHK_DAYS_STARTEND( 2, 1, 3, 1 ) )
+	{
+		MSG_WND_DSP();
+		if (BIT_CHK(1468))
+		{
+			MSG(WELCOMEBACK);
+			BEEFBOWL_ORDERING();
+			return;
+		}
+
+		if ( (FLD_FUNCTION_003F(1, 0) >= 2) && ( !BIT_CHK(1468) ) )// Added closing parenthesis
+		{
+			MSG(CrowdedAsUsual); // Added missing semicolon
+			MSG_WND_CLS();
+			WAIT(20);
+			MSG_WND_DSP();
+			MSG(WAITUP);
+			MSG_WND_CLS();
+			WAIT(10);
+			MSG_WND_DSP();
+			MSG(WAITER);
+			MSG_WND_CLS();
+			MSG_WND_DSP();
+			MSG(CHARMU_GREAT);
+			BIT_ON(1468); // Added missing semicolon
+			BEEFBOWL_ORDERING();
+			return;
+		}
+		else
+		{
+			MSG(CrowdedAsAlways);
+			MSG_WND_CLS();
+			return;
+		}
+	}
+	else
+	{
+		if ( FUNCTION_0033() == 5 )
+		{
+			MSG_WND_DSP();
+			MSG( GYUDON_SETUMEI_N );
+			MSG_WND_CLS();
+		}
+		else
+		{
+			MSG_WND_DSP();
+			MSG( GYUDON_SETUMEI );
+			MSG_WND_CLS();
+		}
+	}
+}
+
+
+
+
+
+void BEEFBOWL_ORDERING()
+{
+    int var0;
+    int var1;
+    int var2;
+	int var3;
+	int var92 = 510;
+	
+	if ( FUNCTION_0032() == 1 )
+	{
+		var92 -= 2;
+	}
+	else if ( FUNCTION_0032() == 3 )
+	{
+		var92 -= 4;
+	}
+	else if ( FUNCTION_0032() == 5 )
+	{
+		var92 -= 8;
+	}
+	
+	if ( CHK_DAYS_STARTEND( 4, 1, 6, 1 ) )
+	{
+		var92 -= 16;
+	}
+	else if (CHK_DAYS_STARTEND(6, 1, 9, 1)) 
+	{
+		var92 -= 32; 
+	}
+	else if (CHK_DAYS_STARTEND(9, 1, 12, 1)) 
+	{
+		var92 -= 64; 
+	}
+	else if (CHK_DAYS_STARTEND(12, 1, 1, 1)) 
+	{
+		var92 -= 128; 
+	}
+	else if (CHK_DAYS_STARTEND(1, 1, 3, 31)) 
+	{
+		var92 -= 256; 
+	}
+	
+    MSG_WND_DSP();
+    MSG( BEEF_BUY_OK );
+	FUNCTION_0006(var92);
+    SEL_DEFKEY( 14, 9 );
+    var0 = SEL( BEEF_SEL2 );
+    
+    if ( var0 == 0 )
+    {
+        var1 = ( 1280 + 143 );
+		var3 = 200;
+    }
+    else if ( var0 == 1 )
+    {
+        var1 = ( 1280 + 156 );
+		var3 = 1000;
+    }
+    else if ( var0 == 2 )
+    {
+        var1 = ( 1280 + 157 );
+		var3 = 1000;
+    }
+	else if ( var0 == 3 )
+	{
+		var1 = ( 1280 + 243 );
+		var3 = 1000;
+	}
+	else if ( var0 == 4 )
+	{
+		var1 = ( 1280 + 68 );
+		var3 = 600;
+	}
+	else if ( var0 == 5 )
+	{
+		var1 = ( 1280 + 31 );
+		var3 = 1500;
+	}
+	else if ( var0 == 6 )
+	{
+		var1 = ( 1280 + 78 );
+		var3 = 800;
+	}
+	else if ( var0 == 7 )
+	{
+		var1 = ( 1280 + 79 );
+		var3 = 1000;
+	}
+	else if ( var0 == 8 )
+	{
+		var1 = ( 1280 + 51 );
+		var3 = 1300;
+	}
+    else 
+    {
+        MSG_WND_CLS();
+        return;
+    }
+
+    SET_MSG_VAR( 0, var1, 5 );
+    var2 = GET_ITEM_NUM( var1 );
+    
+    if ( var2 == 99 )
+    {
+        MSG( BEEF_CANT_BUY );
+    }
+    else 
+	{
+		int playerMoney = ADD_PC_MONEY(0);
+		SET_MSG_VAR(3, var2, 0);
+		MSG(VENDOR_BUY_AMT); // from "buybulk.msg"
+		int foodAmount = select_amountt(var2);
+		if (foodAmount <= 0) { // only runs if player cancels buying
+			FUNCTION_003B();
+			MSG_WND_CLS();
+			return;
+		}
+		int foodCost = (var3 * foodAmount);
+		if (playerMoney >= foodCost) {
+			SET_MSG_VAR(1, foodAmount, 0);
+			SET_MSG_VAR(9, foodCost, 0);
+			SET_MSG_VAR(4, playerMoney, 0);
+			MSG(VENDOR_BULK_CONFIRM); // from "buybulk.msg"
+			SEL_DEFKEY(14, 1);
+			if (!SEL(YESNO_SEL)) { // from "buybulk.msg"
+				MSG(BEEF_MONEY_IN);
+				MSG_WND_CLS();
+				SET_ITEM_NUM(var1, var2 + foodAmount);
+				ADD_PC_MONEY(-foodCost);
+				WAIT(90);
+				MSG_WND_DSP();
+				MSG(VENDOR_BUY_END); // from "buybulk.msg"
+				MSG( COMEAGAIN );
+			}
+		}
+		else {
+			MSG(BEEF_NO_MONEY);
+		}
+	}
+}
+		
+		
+		

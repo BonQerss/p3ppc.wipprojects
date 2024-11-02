@@ -1,0 +1,139 @@
+{
+  "ModId": "p4gpc.smtvaltmodelsplus",
+  "ModName": "SMT V Alternative Models\u002B",
+  "ModAuthor": "Dexxtrip, Light1",
+  "ModVersion": "1.0.0",
+  "ModDescription": "Backports alternative Persona designs from SMT V to P4G",
+  "ModDll": "p4gpc.smtvaltmodelsplus.dll",
+  "ModIcon": "Preview.png",
+  "ModR2RManagedDll32": "x86/p4gpc.smtvaltmodelsplus.dll",
+  "ModR2RManagedDll64": "x64/p4gpc.smtvaltmodelsplus.dll",
+  "ModNativeDll32": "",
+  "ModNativeDll64": "",
+  "Tags": [],
+  "CanUnload": false,
+  "HasExports": false,
+  "IsLibrary": false,
+  "ReleaseMetadataFileName": "p4gpc.smtvaltmodelsplus.ReleaseMetadata.json",
+  "PluginData": {
+    "GameBanana": {
+      "ItemType": "Mod",
+      "ItemId": 0
+    },
+    "GitHubDependencies": {
+      "IdToConfigMap": {
+        "crifs.v2.hook": {
+          "Config": {
+            "UserName": "Sewer56",
+            "RepositoryName": "CriFs.V2.Hook.ReloadedII",
+            "UseReleaseTag": false,
+            "AssetFileName": "Mod.zip"
+          },
+          "ReleaseMetadataName": "CriFs.V2.Hook.ReleaseMetadata.json"
+        },
+        "p5rpc.modloader": {
+          "Config": {
+            "UserName": "Sewer56",
+            "RepositoryName": "p5rpc.modloader",
+            "UseReleaseTag": true,
+            "AssetFileName": "Mod.zip"
+          },
+          "ReleaseMetadataName": "p5rpc.modloader.ReleaseMetadata.json"
+        },
+        "reloaded.sharedlib.hooks": {
+          "Config": {
+            "UserName": "Sewer56",
+            "RepositoryName": "Reloaded.SharedLib.Hooks.ReloadedII",
+            "UseReleaseTag": true,
+            "AssetFileName": "reloaded.sharedlib.hooks.zip"
+          },
+          "ReleaseMetadataName": "Sewer56.Update.ReleaseMetadata.json"
+        },
+        "reloaded.universal.fileemulationframework.pak": {
+          "Config": {
+            "UserName": "Sewer56",
+            "RepositoryName": "FileEmulationFramework",
+            "UseReleaseTag": false,
+            "AssetFileName": "Mod.zip"
+          },
+          "ReleaseMetadataName": "PAK.Stream.Emulator.ReleaseMetadata.json"
+        },
+        "Reloaded.Memory.SigScan.ReloadedII": {
+          "Config": {
+            "UserName": "Reloaded-Project",
+            "RepositoryName": "Reloaded.Memory.SigScan",
+            "UseReleaseTag": false,
+            "AssetFileName": "Mod.zip"
+          },
+          "ReleaseMetadataName": "Reloaded.Memory.SigScan.ReloadedII.ReleaseMetadata.json"
+        },
+        "CriFs.V2.Hook.Awb": {
+          "Config": {
+            "UserName": "Sewer56",
+            "RepositoryName": "CriFs.V2.Hook.ReloadedII",
+            "UseReleaseTag": false,
+            "AssetFileName": "Mod.zip"
+          },
+          "ReleaseMetadataName": "CriFs.V2.Hook.Awb.ReleaseMetadata.json"
+        },
+        "reloaded.universal.fileemulationframework.bmd": {
+          "Config": {
+            "UserName": "Sewer56",
+            "RepositoryName": "FileEmulationFramework",
+            "UseReleaseTag": false,
+            "AssetFileName": "Mod.zip"
+          },
+          "ReleaseMetadataName": "BMD.File.Emulator.ReleaseMetadata.json"
+        },
+        "reloaded.universal.fileemulationframework.bf": {
+          "Config": {
+            "UserName": "Sewer56",
+            "RepositoryName": "FileEmulationFramework",
+            "UseReleaseTag": false,
+            "AssetFileName": "Mod.zip"
+          },
+          "ReleaseMetadataName": "BF.File.Emulator.ReleaseMetadata.json"
+        },
+        "reloaded.universal.fileemulationframework.spd": {
+          "Config": {
+            "UserName": "Sewer56",
+            "RepositoryName": "FileEmulationFramework",
+            "UseReleaseTag": false,
+            "AssetFileName": "Mod.zip"
+          },
+          "ReleaseMetadataName": "SPD.File.Emulator.ReleaseMetadata.json"
+        },
+        "reloaded.universal.fileemulationframework.awb": {
+          "Config": {
+            "UserName": "Sewer56",
+            "RepositoryName": "FileEmulationFramework",
+            "UseReleaseTag": false,
+            "AssetFileName": "Mod.zip"
+          },
+          "ReleaseMetadataName": "AWB.Stream.Emulator.ReleaseMetadata.json"
+        },
+        "reloaded.universal.fileemulationframework": {
+          "Config": {
+            "UserName": "Sewer56",
+            "RepositoryName": "FileEmulationFramework",
+            "UseReleaseTag": false,
+            "AssetFileName": "Mod.zip"
+          },
+          "ReleaseMetadataName": "Reloaded.Universal.FileEmulationFramework.ReleaseMetadata.json"
+        }
+      }
+    }
+  },
+  "IsUniversalMod": false,
+  "ModDependencies": [
+    "crifs.v2.hook",
+    "p5rpc.modloader",
+    "reloaded.sharedlib.hooks",
+    "reloaded.universal.fileemulationframework.pak"
+  ],
+  "OptionalDependencies": [],
+  "SupportedAppId": [
+    "p4g.exe"
+  ],
+  "ProjectUrl": ""
+}

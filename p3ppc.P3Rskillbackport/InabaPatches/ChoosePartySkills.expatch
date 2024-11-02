@@ -1,0 +1,12 @@
+[replacement Choose Party Member Skills]
+pattern = 66 2b c8 33 c0 66 83 f9 1f 0f 96 c0 48 83 c4 20 5b c3
+offset = 9
+replacement = bytes( B0 00 90 )
+
+[replacement Enable Further Loops]
+pattern = 83 FF 05 7C ?? 33 D2
+replacement = bytes( 83 FF 10 )
+
+[replacement Enable Insta Heal and Fast Heal]
+pattern = 75 ?? 48 8B 6C 24 ?? 43 80 BC ?? ?? ?? ?? ?? 01
+replacement = bytes( 74 )

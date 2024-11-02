@@ -1,0 +1,9 @@
+const mask = 0x2A // Bitmask is Dorm, Shrine, Strip Mall, Port Island Station, Mall, Gekko
+const numOptions = 3 // The number of options to display (make sure to set this right!)
+
+[patch ExpandedNightMap]
+pattern = C7 83 ?? ?? ?? ?? 22 00 00 00 66 89 43 ??
+order = only
+mov eax, {numOptions}
+mov dword [rbx+0x84], {mask}
+

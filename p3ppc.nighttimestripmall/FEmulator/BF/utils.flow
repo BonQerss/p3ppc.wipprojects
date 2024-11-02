@@ -1,0 +1,69 @@
+// 
+// Imports
+// 
+
+import("utils.msg");
+
+// 
+// Procedure declarations
+// 
+
+// do corrections for bulk purchase; set to bulkAmount if can buy more than bulkAmount,
+// set to 1 if can't buy anything (looks better and makes script work correctly)
+int amt_corrections(int in, int limit) {
+	if (in > limit) {
+		in = limit;
+	}
+	else if (in <= 0) {
+		in = 1;
+	}
+	return in;
+}
+
+int select_amountt(int current) {
+	int finalNumber = 0;
+	bool firstDigit = true;
+	bool firstSet = true;
+	while (true) {
+		int numberMask = 0;
+		if (firstSet) {
+			if (firstDigit) {
+				numberMask += 1;
+			}
+			numberMask += 0xBE0; // 0b1011_1110_0000
+		}
+		else {
+			numberMask += 0x41F; // 0b0100_0001_1111
+		}
+		SEL_DEFKEY(14, 999);
+		FUNCTION_0006(numberMask);
+		int numberChoice = SEL(NUMBERS_SEL);
+		if (numberChoice == 10) {
+			firstSet = false;
+		}
+		else if (numberChoice == 11) {
+			firstSet = true;
+		}
+		else if (numberChoice == 999) {
+			break; // exit loop and return current value
+		}
+		else {
+			if (firstDigit) {
+				finalNumber = numberChoice;
+				firstDigit = false;
+			}
+			else {
+				finalNumber *= 10;
+				finalNumber += numberChoice;
+				// if the chosen amount would result in going over the limit,
+				// limit items to amount needed to reach the limit
+				if ((current + finalNumber) > 99) {
+					finalNumber = (99 - current);
+				}
+				// Exit loop when we select second digit
+				break;
+			}
+		}
+	}
+	return finalNumber;
+}

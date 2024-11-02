@@ -1,0 +1,196 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v7.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v7.0": {
+      "p3ppc.nighttimemusic/1.0.0": {
+        "dependencies": {
+          "CriFs.V2.Hook.Interfaces": "1.0.0",
+          "Reloaded.Memory": "9.4.2",
+          "Reloaded.Memory.SigScan.ReloadedII.Interfaces": "1.2.0",
+          "Reloaded.Mod.Interfaces": "2.4.0",
+          "Reloaded.SharedLib.Hooks": "1.9.0",
+          "System.Collections": "4.3.0"
+        },
+        "runtime": {
+          "p3ppc.nighttimemusic.dll": {}
+        }
+      },
+      "CriFsV2Lib.Definitions/1.1.0": {
+        "runtime": {
+          "lib/net7.0/CriFsV2Lib.Definitions.dll": {
+            "assemblyVersion": "1.1.0.0",
+            "fileVersion": "1.1.0.0"
+          }
+        }
+      },
+      "Microsoft.NETCore.Platforms/1.1.0": {},
+      "Microsoft.NETCore.Targets/1.1.0": {},
+      "Reloaded.Hooks.Definitions/1.11.0": {
+        "runtime": {
+          "lib/net6.0/Reloaded.Hooks.Definitions.dll": {
+            "assemblyVersion": "1.11.0.0",
+            "fileVersion": "1.11.0.0"
+          }
+        }
+      },
+      "Reloaded.Memory/9.4.2": {
+        "runtime": {
+          "lib/net7.0/Reloaded.Memory.dll": {
+            "assemblyVersion": "9.4.2.0",
+            "fileVersion": "9.4.2.0"
+          }
+        }
+      },
+      "Reloaded.Memory.Sigscan.Definitions/1.1.0": {
+        "runtime": {
+          "lib/netcoreapp3.1/Reloaded.Memory.Sigscan.Definitions.dll": {
+            "assemblyVersion": "1.1.0.0",
+            "fileVersion": "1.1.0.0"
+          }
+        }
+      },
+      "Reloaded.Memory.SigScan.ReloadedII.Interfaces/1.2.0": {
+        "dependencies": {
+          "Reloaded.Memory.Sigscan.Definitions": "1.1.0"
+        },
+        "runtime": {
+          "lib/netstandard2.0/Reloaded.Memory.SigScan.ReloadedII.Interfaces.dll": {
+            "assemblyVersion": "1.2.0.0",
+            "fileVersion": "1.2.0.0"
+          }
+        }
+      },
+      "Reloaded.Mod.Interfaces/2.4.0": {},
+      "Reloaded.SharedLib.Hooks/1.9.0": {
+        "dependencies": {
+          "Reloaded.Hooks.Definitions": "1.11.0"
+        },
+        "runtime": {
+          "lib/netstandard2.0/Reloaded.Hooks.ReloadedII.Interfaces.dll": {
+            "assemblyVersion": "1.9.0.0",
+            "fileVersion": "1.9.0.0"
+          }
+        }
+      },
+      "System.Collections/4.3.0": {
+        "dependencies": {
+          "Microsoft.NETCore.Platforms": "1.1.0",
+          "Microsoft.NETCore.Targets": "1.1.0",
+          "System.Runtime": "4.3.0"
+        }
+      },
+      "System.Runtime/4.3.0": {
+        "dependencies": {
+          "Microsoft.NETCore.Platforms": "1.1.0",
+          "Microsoft.NETCore.Targets": "1.1.0"
+        }
+      },
+      "CriFs.V2.Hook.Interfaces/1.0.0": {
+        "dependencies": {
+          "CriFsV2Lib.Definitions": "1.1.0",
+          "Reloaded.Memory": "9.4.2",
+          "Reloaded.Memory.SigScan.ReloadedII.Interfaces": "1.2.0"
+        },
+        "runtime": {
+          "CriFs.V2.Hook.Interfaces.dll": {
+            "assemblyVersion": "1.0.0",
+            "fileVersion": "1.0.0.0"
+          }
+        }
+      }
+    }
+  },
+  "libraries": {
+    "p3ppc.nighttimemusic/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "CriFsV2Lib.Definitions/1.1.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-hPvJ4DR16lVSYHSddUsMTUQLajCALhNA+GDfAY0VMa4xSvBOEbZeCuj2tYO8GqeQMyiosL0/aRaFZ2OgFefRKA==",
+      "path": "crifsv2lib.definitions/1.1.0",
+      "hashPath": "crifsv2lib.definitions.1.1.0.nupkg.sha512"
+    },
+    "Microsoft.NETCore.Platforms/1.1.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-kz0PEW2lhqygehI/d6XsPCQzD7ff7gUJaVGPVETX611eadGsA3A877GdSlU0LRVMCTH/+P3o2iDTak+S08V2+A==",
+      "path": "microsoft.netcore.platforms/1.1.0",
+      "hashPath": "microsoft.netcore.platforms.1.1.0.nupkg.sha512"
+    },
+    "Microsoft.NETCore.Targets/1.1.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-aOZA3BWfz9RXjpzt0sRJJMjAscAUm3Hoa4UWAfceV9UTYxgwZ1lZt5nO2myFf+/jetYQo4uTP7zS8sJY67BBxg==",
+      "path": "microsoft.netcore.targets/1.1.0",
+      "hashPath": "microsoft.netcore.targets.1.1.0.nupkg.sha512"
+    },
+    "Reloaded.Hooks.Definitions/1.11.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-/z0AwcCvVTQHlQ9SMMMBqKEIrm5t/yBFPylySW2Rnr7uRGV9jGfoACFe79KZKF976dhtkyy2xl0HIXz5hRUkng==",
+      "path": "reloaded.hooks.definitions/1.11.0",
+      "hashPath": "reloaded.hooks.definitions.1.11.0.nupkg.sha512"
+    },
+    "Reloaded.Memory/9.4.2": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-yrjimngdXs7evlk/ZFbzP0uppTf0Og+LFFonITgpzZ94HmVOi8b+29YFfYdWTbf68qUzGP0D4s0VsMhaGerg5g==",
+      "path": "reloaded.memory/9.4.2",
+      "hashPath": "reloaded.memory.9.4.2.nupkg.sha512"
+    },
+    "Reloaded.Memory.Sigscan.Definitions/1.1.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-jJYe9pZAzdK0MSaSOmMFPWZ5258YYcn89MnQVnb1AY8QrIf9KmhBOYwNPuc7f0hPV9lIr1i4w3La/ngnaA5Ylg==",
+      "path": "reloaded.memory.sigscan.definitions/1.1.0",
+      "hashPath": "reloaded.memory.sigscan.definitions.1.1.0.nupkg.sha512"
+    },
+    "Reloaded.Memory.SigScan.ReloadedII.Interfaces/1.2.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-iRorTjJJA2d+u6hqv4C9fKbdC8KQN3bQ0bRpWv/4MoK6bTcDzetJhBgbsB5opgNJXb97KxFupxZlS84ykMxqTg==",
+      "path": "reloaded.memory.sigscan.reloadedii.interfaces/1.2.0",
+      "hashPath": "reloaded.memory.sigscan.reloadedii.interfaces.1.2.0.nupkg.sha512"
+    },
+    "Reloaded.Mod.Interfaces/2.4.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-HKQu7M0MyToKU4NK5Ula29MXSNeHz01ZzMK9BWD+xqJCITemAPdMW+w60Swln3ceGCU/ZooFSKtn4I8rcSA9AQ==",
+      "path": "reloaded.mod.interfaces/2.4.0",
+      "hashPath": "reloaded.mod.interfaces.2.4.0.nupkg.sha512"
+    },
+    "Reloaded.SharedLib.Hooks/1.9.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-AEDTDhCnYxJGuLrdZCZPoiqrdl/lW4XwA6bb5dntOvkyw4RBBm/gqoNlHS7RJS7k+kt36ES+UFZAtBeyusYtgw==",
+      "path": "reloaded.sharedlib.hooks/1.9.0",
+      "hashPath": "reloaded.sharedlib.hooks.1.9.0.nupkg.sha512"
+    },
+    "System.Collections/4.3.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-3Dcj85/TBdVpL5Zr+gEEBUuFe2icOnLalmEh9hfck1PTYbbyWuZgh4fmm2ysCLTrqLQw6t3TgTyJ+VLp+Qb+Lw==",
+      "path": "system.collections/4.3.0",
+      "hashPath": "system.collections.4.3.0.nupkg.sha512"
+    },
+    "System.Runtime/4.3.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-JufQi0vPQ0xGnAczR13AUFglDyVYt4Kqnz1AZaiKZ5+GICq0/1MH/mO/eAJHt/mHW1zjKBJd7kV26SrxddAhiw==",
+      "path": "system.runtime/4.3.0",
+      "hashPath": "system.runtime.4.3.0.nupkg.sha512"
+    },
+    "CriFs.V2.Hook.Interfaces/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}

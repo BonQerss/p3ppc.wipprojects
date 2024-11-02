@@ -1,0 +1,85 @@
+import( "dialogue.msg" );
+
+
+bool ally_in_party(int id) {
+    for (int i = 0; i < 3; i++) {
+        if (FUNCTION_0042(i) == id) {
+            return true;
+        }
+    }
+    return false;
+}
+
+int get_avail_mask() {
+    int cAllyID;
+    int var4 = 0;
+    // loop through 2-9 for char bitflag ids
+    for (int i = 2; i < 10; i++) {
+        // adjust for actual character ids
+        if (i >= 6) { // fuuka check
+            cAllyID = (i + 1);
+        } else {
+            cAllyID = i;
+        }
+        if (ally_in_party(cAllyID)) {
+            var4 += 1; // increase party member count
+        }
+    }
+    return var4; // return party count
+}
+
+void dialogue_process()
+{
+	int var4 = 0;
+	int var5;
+	int var6;
+	int var7;
+	int var8;
+    var4 = get_avail_mask();
+
+    if (var4 == 0) {
+        if (BIT_CHK(321)) {
+            var6 = 12;
+        } else {
+            var6 = 11;
+        }
+    } else {
+        var5 = RND(var4 - 1);
+        // can generate between 1 and 3
+        var6 = FUNCTION_0042(var5);
+    }
+
+    var7 = RND(1);
+
+    if (var6 == 2) { // Yukari
+        var8 = (MSG_TARTAROS_BTL_YUKARI_ + var7);
+    } else if (var6 == 3) { // Aigis
+        var8 = (MSG_TARTAROS_BTL_AEGIS_0 + var7);
+    } else if (var6 == 4) { // Mitsuru
+        var8 = (MSG_TARTAROS_BTL_MITSURU + var7);
+    } else if (var6 == 5) { // Junpei
+        var8 = (MSG_TARTAROS_BTL_JUNPEI_ + var7);
+    } else if (var6 == 7) { // Akihiko
+        var8 = (MSG_TARTAROS_BTL_SANADA_ + var7);
+    } else if (var6 == 8) { // Ken
+        var8 = (MSG_TARTAROS_BTL_AMADA_0 + var7);
+    } else if (var6 == 9) { // Shinjiro
+        var8 = (MSG_TARTAROS_BTL_ARAGAKI + var7);
+    } else if (var6 == 10) { // Koromaru
+        var8 = (MSG_TARTAROS_BTL_KOROMAR + var7);
+    } else if (var6 == 11) { // Fuuka Navi
+        FUNCTION_0064(0, 0, 0, 6, 2, 0, 0);
+        var8 = (MSG_TARTAROS_BTL_FUKA_1);
+    } else if (var6 == 12) { // Mitsuru Navi
+        FUNCTION_0064(0, 0, 0, 4, 2, 0, 0);
+        var8 = (MSG_TARTAR_BTL_PT_MITSUR);
+    }
+
+    MSG_WND_DSP();
+    MSG(var8);
+    MSG_WND_CLS();
+
+    if ((var6 == 12) || (var6 == 11)) {
+        FUNCTION_0065(0);
+    }
+}

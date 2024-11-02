@@ -1,0 +1,184 @@
+{
+  "ModId": "p3ppc.nighttimemusic",
+  "ModName": "Night Time Music",
+  "ModAuthor": "Dexxtrip",
+  "ModVersion": "1.0.0",
+  "ModDescription": "Backports the P3R mechanic allowing unique tracks to be played during the night.",
+  "ModDll": "p3ppc.nighttimemusic.dll",
+  "ModIcon": "Preview.png",
+  "ModR2RManagedDll32": "x86/p3ppc.nighttimemusic.dll",
+  "ModR2RManagedDll64": "x64/p3ppc.nighttimemusic.dll",
+  "ModNativeDll32": "",
+  "ModNativeDll64": "",
+  "Tags": [],
+  "CanUnload": false,
+  "HasExports": false,
+  "IsLibrary": false,
+  "ReleaseMetadataFileName": "p3ppc.nighttimemusic.ReleaseMetadata.json",
+  "PluginData": {
+    "GameBanana": {
+      "ItemType": "Mod",
+      "ItemId": 0
+    },
+    "GameBananaDependencies": {
+      "IdToConfigMap": {
+        "BGME.Framework": {
+          "Config": {
+            "ItemType": "Mod",
+            "ItemId": 477399
+          },
+          "ReleaseMetadataName": "BGME.Framework.ReleaseMetadata.json"
+        },
+        "BGME.Framework.API": {
+          "Config": {
+            "ItemType": "Mod",
+            "ItemId": 477399
+          },
+          "ReleaseMetadataName": "BGME.Framework.API.ReleaseMetadata.json"
+        },
+        "Ryo.Reloaded": {
+          "Config": {
+            "ItemType": "Mod",
+            "ItemId": 495507
+          },
+          "ReleaseMetadataName": "Ryo.Reloaded.ReleaseMetadata.json"
+        },
+        "SharedScans.Reloaded": {
+          "Config": {
+            "ItemType": "Mod",
+            "ItemId": 495507
+          },
+          "ReleaseMetadataName": "SharedScans.Reloaded.ReleaseMetadata.json"
+        }
+      }
+    },
+    "GitHubDependencies": {
+      "IdToConfigMap": {
+        "p5rpc.modloader": {
+          "Config": {
+            "UserName": "Sewer56",
+            "RepositoryName": "p5rpc.modloader",
+            "UseReleaseTag": true,
+            "AssetFileName": "Mod.zip"
+          },
+          "ReleaseMetadataName": "p5rpc.modloader.ReleaseMetadata.json"
+        },
+        "Reloaded.Memory.SigScan.ReloadedII": {
+          "Config": {
+            "UserName": "Reloaded-Project",
+            "RepositoryName": "Reloaded.Memory.SigScan",
+            "UseReleaseTag": false,
+            "AssetFileName": "Mod.zip"
+          },
+          "ReleaseMetadataName": "Reloaded.Memory.SigScan.ReloadedII.ReleaseMetadata.json"
+        },
+        "reloaded.sharedlib.hooks": {
+          "Config": {
+            "UserName": "Sewer56",
+            "RepositoryName": "Reloaded.SharedLib.Hooks.ReloadedII",
+            "UseReleaseTag": true,
+            "AssetFileName": "reloaded.sharedlib.hooks.zip"
+          },
+          "ReleaseMetadataName": "Sewer56.Update.ReleaseMetadata.json"
+        },
+        "crifs.v2.hook": {
+          "Config": {
+            "UserName": "Sewer56",
+            "RepositoryName": "CriFs.V2.Hook.ReloadedII",
+            "UseReleaseTag": false,
+            "AssetFileName": "Mod.zip"
+          },
+          "ReleaseMetadataName": "CriFs.V2.Hook.ReleaseMetadata.json"
+        },
+        "p5rpc.lib": {
+          "Config": {
+            "UserName": "AnimatedSwine37",
+            "RepositoryName": "p5rpc.lib",
+            "UseReleaseTag": true,
+            "AssetFileName": "Mod.zip"
+          },
+          "ReleaseMetadataName": "p5rpc.lib.ReleaseMetadata.json"
+        },
+        "CriFs.V2.Hook.Awb": {
+          "Config": {
+            "UserName": "Sewer56",
+            "RepositoryName": "CriFs.V2.Hook.ReloadedII",
+            "UseReleaseTag": false,
+            "AssetFileName": "Mod.zip"
+          },
+          "ReleaseMetadataName": "CriFs.V2.Hook.Awb.ReleaseMetadata.json"
+        },
+        "reloaded.universal.fileemulationframework.pak": {
+          "Config": {
+            "UserName": "Sewer56",
+            "RepositoryName": "FileEmulationFramework",
+            "UseReleaseTag": false,
+            "AssetFileName": "Mod.zip"
+          },
+          "ReleaseMetadataName": "PAK.Stream.Emulator.ReleaseMetadata.json"
+        },
+        "reloaded.universal.fileemulationframework.bmd": {
+          "Config": {
+            "UserName": "Sewer56",
+            "RepositoryName": "FileEmulationFramework",
+            "UseReleaseTag": false,
+            "AssetFileName": "Mod.zip"
+          },
+          "ReleaseMetadataName": "BMD.File.Emulator.ReleaseMetadata.json"
+        },
+        "reloaded.universal.fileemulationframework.bf": {
+          "Config": {
+            "UserName": "Sewer56",
+            "RepositoryName": "FileEmulationFramework",
+            "UseReleaseTag": false,
+            "AssetFileName": "Mod.zip"
+          },
+          "ReleaseMetadataName": "BF.File.Emulator.ReleaseMetadata.json"
+        },
+        "reloaded.universal.fileemulationframework.spd": {
+          "Config": {
+            "UserName": "Sewer56",
+            "RepositoryName": "FileEmulationFramework",
+            "UseReleaseTag": false,
+            "AssetFileName": "Mod.zip"
+          },
+          "ReleaseMetadataName": "SPD.File.Emulator.ReleaseMetadata.json"
+        },
+        "reloaded.universal.fileemulationframework.awb": {
+          "Config": {
+            "UserName": "Sewer56",
+            "RepositoryName": "FileEmulationFramework",
+            "UseReleaseTag": false,
+            "AssetFileName": "Mod.zip"
+          },
+          "ReleaseMetadataName": "AWB.Stream.Emulator.ReleaseMetadata.json"
+        },
+        "reloaded.universal.fileemulationframework": {
+          "Config": {
+            "UserName": "Sewer56",
+            "RepositoryName": "FileEmulationFramework",
+            "UseReleaseTag": false,
+            "AssetFileName": "Mod.zip"
+          },
+          "ReleaseMetadataName": "Reloaded.Universal.FileEmulationFramework.ReleaseMetadata.json"
+        }
+      }
+    }
+  },
+  "IsUniversalMod": false,
+  "ModDependencies": [
+    "BGME.Framework",
+    "BGME.Framework.API",
+    "p4gpc.inaba",
+    "p5rpc.modloader",
+    "Reloaded.Memory.SigScan.ReloadedII",
+    "reloaded.sharedlib.hooks",
+    "crifs.v2.hook"
+  ],
+  "OptionalDependencies": [],
+  "SupportedAppId": [
+    "p3p.exe",
+    "p3p.exe"
+  ],
+  "ProjectUrl": ""
+}

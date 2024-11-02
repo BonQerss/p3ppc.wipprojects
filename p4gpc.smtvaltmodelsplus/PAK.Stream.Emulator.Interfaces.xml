@@ -1,0 +1,100 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>PAK.Stream.Emulator.Interfaces</name>
+    </assembly>
+    <members>
+        <member name="T:PAK.Stream.Emulator.Interfaces.IPakEmulator">
+            <summary>
+            APIs exposed by PAK Emulator.
+            </summary>
+        </member>
+        <member name="M:PAK.Stream.Emulator.Interfaces.IPakEmulator.TryCreateFromFileSlice(System.String,System.Int64,System.String,System.String)">
+            <summary>
+            Tries to create an emulated PAK file using an PAK file embedded inside another file as source.
+            </summary>
+            <param name="sourcePath">Path to the file from which the data will be sourced.</param>
+            <param name="offset">Offset in the file where the PAK starts.</param>
+            <param name="route">The route of the emulated file.</param>
+            <param name="destinationPath">Path to where the emulated file should be put.</param>
+        </member>
+        <member name="M:PAK.Stream.Emulator.Interfaces.IPakEmulator.InvalidateFile(System.String)">
+            <summary>
+            Invalidates a file, i.e. unregisters it, will be recreated on next access.
+            </summary>
+            <param name="pakPath">Path of the PAK file.</param>
+        </member>
+        <member name="M:PAK.Stream.Emulator.Interfaces.IPakEmulator.GetEmulatorInput">
+            <summary>
+            Gets the list of input files from other mods fed into the emulator.
+            </summary>
+        </member>
+        <member name="M:PAK.Stream.Emulator.Interfaces.IPakEmulator.GetEntry(System.IO.Stream,System.String)">
+            <summary>
+            Gets an entry from a pak file
+            </summary>
+            <param name="pak">A stream containing the pak file positioned at the beginning of it</param>
+            <param name="entryPath">The path to the desired entry in the file (e.g. field/script/field.bf)</param>
+            <returns>The data of the desired entry or null if it could not be found in the pak</returns>
+        </member>
+        <member name="M:PAK.Stream.Emulator.Interfaces.IPakEmulator.AddFile(System.String,System.String,System.String)">
+            <summary>
+            Adds a new file to be injected into emulated paks
+            </summary>
+            <param name="file">The path to the file to add</param>
+            <param name="route">The route the file is in</param>
+            <param name="inPakPath">The path in the pak the file will take</param>
+        </member>
+        <member name="M:PAK.Stream.Emulator.Interfaces.IPakEmulator.AddDirectory(System.String)">
+            <summary>
+            Adds a directory to PAK Emulator so it's like the files were in FEmulator\PAK
+            </summary>
+            <param name="dir">The directory to add the files from</param>
+        </member>
+        <member name="T:PAK.Stream.Emulator.Interfaces.Structures.IO.DirectoryInformation">
+            <summary>
+            Represents information tied to an individual directory.
+            </summary>
+        </member>
+        <member name="F:PAK.Stream.Emulator.Interfaces.Structures.IO.DirectoryInformation.FullPath">
+            <summary>
+            Full path to the directory.
+            </summary>
+        </member>
+        <member name="F:PAK.Stream.Emulator.Interfaces.Structures.IO.DirectoryInformation.LastWriteTime">
+            <summary>
+            Last time this directory was modified.
+            </summary>
+        </member>
+        <member name="T:PAK.Stream.Emulator.Interfaces.Structures.IO.DirectoryFilesGroup">
+            <summary>
+            Groups a single directory and a list of files associated with it.
+            </summary>
+        </member>
+        <member name="F:PAK.Stream.Emulator.Interfaces.Structures.IO.DirectoryFilesGroup.Directory">
+            <summary>
+            The directory in question.
+            </summary>
+        </member>
+        <member name="F:PAK.Stream.Emulator.Interfaces.Structures.IO.DirectoryFilesGroup.Files">
+            <summary>
+            The relative file paths tied to this directory.
+            </summary>
+        </member>
+        <member name="T:PAK.Stream.Emulator.Interfaces.Structures.IO.RouteGroupTuple">
+            <summary>
+            A tuple representing a group and a route.
+            </summary>
+        </member>
+        <member name="F:PAK.Stream.Emulator.Interfaces.Structures.IO.RouteGroupTuple.Route">
+            <summary>
+            Route associated with this tuple.
+            </summary>
+        </member>
+        <member name="F:PAK.Stream.Emulator.Interfaces.Structures.IO.RouteGroupTuple.Files">
+            <summary>
+            Files bound by this route.
+            </summary>
+        </member>
+    </members>
+</doc>

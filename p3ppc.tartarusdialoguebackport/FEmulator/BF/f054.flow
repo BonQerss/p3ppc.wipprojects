@@ -1,0 +1,223 @@
+
+import("dialogueCalc.flow");
+
+
+
+// Procedure Index: 15
+void tartaros_battle_11_hook()
+{
+    int var20;
+    var20 = ( ( RND( 299 ) + 100 ) / 100 );
+    FLD_FUNCTION_0040();
+    dialogue_process();
+    WAIT( 30 );
+    FUNCTION_001E( 4, 0 );
+    FUNCTION_004B();
+    FUNCTION_004C();
+    CALL_BATTLE( 476 );
+    WAIT_BATTLE();
+    BIT_ON( 3108 );
+    BIT_OFF( 3546 );
+    FCL_FUNCTION_0005( 122, 1 );
+}
+
+
+// Procedure Index: 16
+void get_item_122f_hook()
+{
+    int var22;
+    int var23;
+    int var21;
+    FLD_FUNCTION_0040();
+    var22 = ( 1280 + 10 );
+    var23 = GET_ITEM_NUM( var22 );
+    var23 = ( var23 + 2 );
+    BIT_OFF( 3472 );
+    var21 = FUNCTION_0018( 41, 0 );
+    FLD_FUNCTION_0051( 2, 0, 4799, 2401 );
+    MSG_WND_DSP();
+    SET_MSG_VAR( 0, var22, 5 );
+    SET_MSG_VAR( 1, 2, 0 );
+    MSG( GET_ITEM_MES );
+    MSG_WND_CLS();
+    SET_ITEM_NUM( var22, var23 );
+    FUNCTION_001A( var21 );
+    FLD_FUNCTION_0000( gVar40, 0 );
+}
+
+
+// Procedure Index: 17
+void tartaros_battle_12_hook()
+{
+    int var24;
+    var24 = ( ( RND( 299 ) + 100 ) / 100 );
+    FLD_FUNCTION_0040();
+    dialogue_process();
+    WAIT( 30 );
+    FUNCTION_001E( 4, 0 );
+    FUNCTION_004B();
+    FUNCTION_004C();
+    CALL_BATTLE( 477 );
+    WAIT_BATTLE();
+    BIT_ON( 3108 );
+    BIT_OFF( 3547 );
+    FCL_FUNCTION_0005( 135, 1 );
+}
+
+
+// Procedure Index: 18
+void get_item_135f_hook()
+{
+    int var26;
+    int var27;
+    int var25;
+    FLD_FUNCTION_0040();
+    var26 = ( 1280 + 7 );
+    var27 = GET_ITEM_NUM( var26 );
+    var27 = ( var27 + 1 );
+    BIT_OFF( 3473 );
+    var25 = FUNCTION_0018( 41, 0 );
+    FLD_FUNCTION_0051( 2, 0, 3601, 7194 );
+    MSG_WND_DSP();
+    SET_MSG_VAR( 0, var26, 5 );
+    SET_MSG_VAR( 1, 1, 0 );
+    MSG( GET_ITEM_MES );
+    MSG_WND_CLS();
+    SET_ITEM_NUM( var26, var27 );
+    FUNCTION_001A( var25 );
+    FLD_FUNCTION_0000( gVar40, 0 );
+}
+
+
+// Procedure Index: 19
+void get_item_135f_2_hook()
+{
+    int var29;
+    int var30;
+    int var28;
+    FLD_FUNCTION_0040();
+    var29 = ( 1280 + 10 );
+    var30 = GET_ITEM_NUM( var29 );
+    var30 = ( var30 + 2 );
+    BIT_OFF( 3474 );
+    var28 = FUNCTION_0018( 42, 0 );
+    FLD_FUNCTION_0051( 3, 0, 3204, 6820 );
+    MSG_WND_DSP();
+    SET_MSG_VAR( 0, var29, 5 );
+    SET_MSG_VAR( 1, 2, 0 );
+    MSG( GET_ITEM_MES );
+    MSG_WND_CLS();
+    SET_ITEM_NUM( var29, var30 );
+    FUNCTION_001A( var28 );
+    FLD_FUNCTION_0000( gVar42, 0 );
+}
+
+
+// Procedure Index: 20
+void tartaros_battle_13_hook()
+{
+    int var31;
+    var31 = ( ( RND( 299 ) + 100 ) / 100 );
+    FLD_FUNCTION_0040();
+    dialogue_process();
+    WAIT( 30 );
+    FUNCTION_001E( 4, 0 );
+    FUNCTION_004B();
+    FUNCTION_004C();
+    CALL_BATTLE( 478 );
+    WAIT_BATTLE();
+    BIT_ON( 3108 );
+    BIT_OFF( 3548 );
+    FCL_FUNCTION_0005( 146, 1 );
+}
+
+
+// Procedure Index: 21
+void get_item_146f_hook()
+{
+    int var33;
+    int var34;
+    int var32;
+    FLD_FUNCTION_0040();
+    var33 = ( 1280 + 6 );
+    var34 = GET_ITEM_NUM( var33 );
+    var34 = ( var34 + 1 );
+    BIT_OFF( 3475 );
+    var32 = FUNCTION_0018( 41, 0 );
+    FLD_FUNCTION_0051( 2, 0, 4801, 8001 );
+    MSG_WND_DSP();
+    SET_MSG_VAR( 0, var33, 5 );
+    SET_MSG_VAR( 1, 1, 0 );
+    MSG( GET_ITEM_MES );
+    MSG_WND_CLS();
+    SET_ITEM_NUM( var33, var34 );
+    FUNCTION_001A( var32 );
+    FLD_FUNCTION_0000( gVar40, 0 );
+}
+
+
+// Procedure Index: 22
+void tartaros_battle_14_hook()
+{
+    int var35;
+    var35 = ( ( RND( 299 ) + 100 ) / 100 );
+    FLD_FUNCTION_0040();
+    dialogue_process();
+    WAIT( 30 );
+    FUNCTION_001E( 4, 0 );
+    FUNCTION_004B();
+    FUNCTION_004C();
+    CALL_BATTLE( 479 );
+    WAIT_BATTLE();
+    BIT_ON( 3108 );
+    BIT_OFF( 3549 );
+    FCL_FUNCTION_0005( 160, 1 );
+}
+
+
+// Procedure Index: 23
+void get_item_160f_hook()
+{
+    int var37;
+    int var38;
+    int var36;
+    FLD_FUNCTION_0040();
+    var37 = ( 1280 + 7 );
+    var38 = GET_ITEM_NUM( var37 );
+    var38 = ( var38 + 1 );
+    BIT_OFF( 3476 );
+    var36 = FUNCTION_0018( 41, 0 );
+    FLD_FUNCTION_0051( 2, 0, 3606, 7196 );
+    MSG_WND_DSP();
+    SET_MSG_VAR( 0, var37, 5 );
+    SET_MSG_VAR( 1, 1, 0 );
+    MSG( GET_ITEM_MES );
+    MSG_WND_CLS();
+    SET_ITEM_NUM( var37, var38 );
+    FUNCTION_001A( var36 );
+    FLD_FUNCTION_0000( gVar40, 0 );
+}
+
+
+// Procedure Index: 24
+void get_item_160f_2_hook()
+{
+    int var40;
+    int var41;
+    int var39;
+    FLD_FUNCTION_0040();
+    var40 = ( 1280 + 35 );
+    var41 = GET_ITEM_NUM( var40 );
+    var41 = ( var41 + 2 );
+    BIT_OFF( 3477 );
+    var39 = FUNCTION_0018( 42, 0 );
+    FLD_FUNCTION_0051( 3, 0, 3207, 6803 );
+    MSG_WND_DSP();
+    SET_MSG_VAR( 0, var40, 5 );
+    SET_MSG_VAR( 1, 2, 0 );
+    MSG( GET_ITEM_MES );
+    MSG_WND_CLS();
+    SET_ITEM_NUM( var40, var41 );
+    FUNCTION_001A( var39 );
+    FLD_FUNCTION_0000( gVar42, 0 );
+}

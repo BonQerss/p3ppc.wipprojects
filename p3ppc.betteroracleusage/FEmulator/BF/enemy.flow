@@ -1,0 +1,350 @@
+import( "enemy.msg" );
+
+
+void AI_EVENT_1AB_ACTEND_hook()
+{
+    if ( ( AI_FUNCTION_00A1( 272, 10 ) == 1 ) && !BIT_CHK( 5615 ) )
+    {
+		BIT_ON( 5615 );
+        BIT_ON( 5616 );
+        BIT_ON( 5617 );
+        BIT_ON( 5618 );
+        AI_FUNCTION_00D0();
+        AI_FUNCTION_00D2();
+        MSG_WND_DSP();
+        AI_FUNCTION_00D7( 0 );
+        AI_FUNCTION_00CB( 180.30f, 173.70f, -1061.90f, 145.70f, 162.00f, -968.80f );
+        AI_FUNCTION_00CC( -113.20f, 110.40f, -1120.70f, -110.50f, 106.40f, -1020.80f );
+        AI_FUNCTION_00CD( 124 );
+        MSG( THEURGY_USE1 );
+        AI_FUNCTION_00CB( 31.00f, 408.90f, 456.00f, 38.80f, 367.10f, 365.40f );
+        AI_FUNCTION_00CC( -3.40f, 99.80f, 853.80f, 5.20f, 96.20f, 754.30f );
+        AI_FUNCTION_00CD( 142 );
+        MSG( THEURGY_USE2 );
+        MSG_WND_CLS();
+        AI_FUNCTION_00CF();
+        AI_FUNCTION_00D1();
+    }
+    if ( ( AI_FUNCTION_00A1( 272, 25 ) == 1 ) && !BIT_CHK( 5616 ) )
+    {
+        BIT_ON( 5616 );
+        BIT_ON( 5617 );
+        BIT_ON( 5618 );
+        AI_FUNCTION_00D0();
+        AI_FUNCTION_00D2();
+        MSG_WND_DSP();
+        AI_FUNCTION_00D7( 0 );
+        AI_FUNCTION_00CB( 180.30f, 173.70f, -1061.90f, 145.70f, 162.00f, -968.80f );
+        AI_FUNCTION_00CC( -113.20f, 110.40f, -1120.70f, -110.50f, 106.40f, -1020.80f );
+        AI_FUNCTION_00CD( 124 );
+        MSG( MSG_0774 );
+        AI_FUNCTION_00CB( 31.00f, 408.90f, 456.00f, 38.80f, 367.10f, 365.40f );
+        AI_FUNCTION_00CC( -3.40f, 99.80f, 853.80f, 5.20f, 96.20f, 754.30f );
+        AI_FUNCTION_00CD( 142 );
+        MSG( MSG_0775 );
+        MSG_WND_CLS();
+        AI_FUNCTION_00CF();
+        AI_FUNCTION_00D1();
+    }
+    else if ( ( AI_FUNCTION_00A1( 272, 50 ) == 1 ) && !BIT_CHK( 5617 ) )
+    {
+        BIT_ON( 5617 );
+        BIT_ON( 5618 );
+        AI_FUNCTION_00D0();
+        AI_FUNCTION_00D2();
+        MSG_WND_DSP();
+        AI_FUNCTION_00D7( 0 );
+        AI_FUNCTION_00CB( 30.30f, 422.70f, 647.60f, 38.80f, 386.50f, 554.80f );
+        AI_FUNCTION_00CC( 7.20f, 268.40f, 900.90f, 16.00f, 241.80f, 804.90f );
+        AI_FUNCTION_00CD( 125 );
+        MSG( MSG_0772 );
+        AI_FUNCTION_00CB( 161.60f, 292.50f, -929.10f, 123.40f, 259.50f, -842.80f );
+        AI_FUNCTION_00CC( -11.20f, 64.80f, -892.80f, -25.90f, 67.50f, -793.90f );
+        AI_FUNCTION_00CD( 108 );
+        MSG( MSG_0773 );
+        MSG_WND_CLS();
+        AI_FUNCTION_00CF();
+        AI_FUNCTION_00D1();
+    }
+    else if ( ( AI_FUNCTION_00A1( 272, 75 ) == 1 ) && !BIT_CHK( 5618 ) )
+    {
+        BIT_ON( 5618 );
+        AI_FUNCTION_00D0();
+        AI_FUNCTION_00D2();
+        MSG_WND_DSP();
+        AI_FUNCTION_00D7( 0 );
+        AI_FUNCTION_00CB( -122.10f, 524.70f, 286.40f, -93.50f, 461.30f, 214.50f );
+        AI_FUNCTION_00CC( 60.90f, 354.00f, 401.70f, 66.70f, 314.80f, 309.90f );
+        AI_FUNCTION_00CD( 137 );
+        MSG( MSG_0770 );
+        AI_FUNCTION_00CB( -47.90f, 392.80f, -992.80f, -57.60f, 347.50f, -904.20f );
+        AI_FUNCTION_00CC( -14.70f, 109.80f, -1123.40f, -28.10f, 108.40f, -1024.30f );
+        AI_FUNCTION_00CD( 112 );
+        MSG( MSG_0771 );
+        MSG_WND_CLS();
+        AI_FUNCTION_00CF();
+        AI_FUNCTION_00D1();
+    }
+
+}
+
+// Procedure Index: 143
+void AI_Takaya2_hook()
+{
+    int var93;
+    
+    if ( BUFF_SELF_CHECK( SpecialEffects.MindCharge ) == 1 )
+    {
+        BIT_ON( 5572 );
+    }
+    else 
+    {
+        BIT_OFF( 5572 );
+    }
+
+    var93 = AI_RND( 100 );
+    
+    if ( !BIT_CHK( 5584 ) )
+    {
+        BIT_ON( 5584 );
+        AI_ACT_SKILL( BattleSkill.MindCharge );
+        AI_MINE();
+        return;
+    }
+	
+	if ( ( BIT_CHK(5615) ) && !BIT_CHK(5586) )
+	{
+		BIT_ON(5586);
+		AI_ACT_PERSONA( 176, 77 );
+		AI_TAR_RND();
+		return;
+	}
+
+
+    
+    if ( AI_CHK_HP_PERCENT( 75 ) && !BIT_CHK( 5593 ) )
+    {
+        BIT_ON( 5593 );
+        AI_ACT_SKILL( BattleSkill.Megidola );
+        AI_TAR_RND();
+        return;
+    }
+    else if ( AI_CHK_HP_PERCENT( 50 ) && !BIT_CHK( 5589 ) )
+    {
+        BIT_ON( 5568 );
+        BIT_ON( 5589 );
+        AI_ACT_SKILL( BattleSkill.MindCharge );
+        AI_TAR_RND();
+        return;
+    }
+    else if ( AI_CHK_HP_PERCENT( 25 ) && !BIT_CHK( 5587 ) )
+    {
+        BIT_ON( 5587 );
+        AI_ACT_SKILL( BattleSkill.Megidolaon );
+        AI_TAR_RND();
+        return;
+    }
+    else if ( AI_CHK_HP_PERCENT( 12 ) && !BIT_CHK( 5585 ) )
+    {
+        BIT_ON( 5585 );
+        AI_ACT_SKILL( BattleSkill.MindCharge );
+        AI_TAR_RND();
+        return;
+    }
+
+    
+    if ( AI_CHK_ONE_MORE() == 1 )
+    {
+        AI_ACT_SKILL( BattleSkill.MindCharge );
+        AI_TAR_RND();
+        return;
+    }
+
+    
+    if ( !BIT_CHK( 5568 ) )
+    {
+        
+        if ( BIT_CHK( 5572 ) )
+        {
+            AI_ACT_SKILL( BattleSkill.Megidola );
+            AI_TAR_RND();
+            return;
+        }
+        else if ( !BIT_CHK( 5572 ) )
+        {
+            
+            if ( var93 < 18 )
+            {
+                AI_ACT_SKILL( BattleSkill.PierceAttack5 );
+                AI_TAR_WEAK( Affinity.Pierce );
+                return;
+            }
+            else if ( var93 < ( 18 + 18 ) )
+            {
+                AI_ACT_SKILL( BattleSkill.Agidyne );
+                AI_TAR_WEAK( Affinity.Fire );
+                return;
+            }
+            else if ( var93 < ( ( 18 + 18 ) + 18 ) )
+            {
+                AI_ACT_SKILL( BattleSkill.Garudyne );
+                AI_TAR_WEAK( Affinity.Wind );
+                return;
+            }
+            else if ( var93 < ( ( ( 18 + 18 ) + 18 ) + 18 ) )
+            {
+                AI_ACT_SKILL( BattleSkill.Bufudyne );
+                AI_TAR_WEAK( Affinity.Ice );
+                return;
+            }
+            else if ( var93 < ( ( ( ( 18 + 18 ) + 18 ) + 18 ) + 18 ) )
+            {
+                AI_ACT_SKILL( BattleSkill.Ziodyne );
+                AI_TAR_WEAK( Affinity.Elec );
+                return;
+            }
+            else if ( var93 < ( ( ( ( ( 18 + 18 ) + 18 ) + 18 ) + 18 ) + 5 ) )
+            {
+                AI_ACT_SKILL( BattleSkill.MindCharge );
+                AI_TAR_RND();
+                return;
+            }
+            else 
+            {
+                AI_ACT_SKILL( BattleSkill.Megidola );
+                AI_TAR_RND();
+                return;
+            }
+
+        }
+
+    }
+    else if ( BIT_CHK( 5568 ) )
+    {
+        
+        if ( BIT_CHK( 5572 ) )
+        {
+            AI_ACT_SKILL( BattleSkill.Megidolaon );
+            AI_TAR_RND();
+            return;
+        }
+        else if ( !BIT_CHK( 5572 ) )
+        {
+            
+            if ( var93 < 8 )
+            {
+                AI_ACT_SKILL( BattleSkill.Megidolaon );
+                AI_TAR_RND();
+                return;
+            }
+            else if ( var93 < ( 8 + 15 ) )
+            {
+                AI_ACT_SKILL( BattleSkill.Agidyne );
+                AI_TAR_WEAK( Affinity.Fire );
+                return;
+            }
+            else if ( var93 < ( ( 8 + 15 ) + 15 ) )
+            {
+                AI_ACT_SKILL( BattleSkill.Garudyne );
+                AI_TAR_WEAK( Affinity.Wind );
+                return;
+            }
+            else if ( var93 < ( ( ( 8 + 15 ) + 15 ) + 15 ) )
+            {
+                AI_ACT_SKILL( BattleSkill.Bufudyne );
+                AI_TAR_WEAK( Affinity.Ice );
+                return;
+            }
+            else if ( var93 < ( ( ( ( 8 + 15 ) + 15 ) + 15 ) + 20 ) )
+            {
+                AI_ACT_SKILL( BattleSkill.Ziodyne );
+                AI_TAR_WEAK( Affinity.Elec );
+                return;
+            }
+            else if ( var93 < ( ( ( ( ( 8 + 15 ) + 15 ) + 15 ) + 20 ) + 15 ) )
+            {
+                AI_ACT_SKILL( BattleSkill.Megidolaon );
+                AI_TAR_RND();
+                return;
+            }
+            else if ( var93 < ( ( ( ( ( ( 8 + 15 ) + 15 ) + 15 ) + 20 ) + 15 ) + 10 ) )
+            {
+                AI_ACT_SKILL( BattleSkill.MindCharge );
+                AI_TAR_RND();
+                return;
+            }
+            else if ( var93 < ( ( ( ( ( ( ( 8 + 15 ) + 15 ) + 15 ) + 20 ) + 15 ) + 10 ) + 1 ) )
+            {
+                AI_ACT_SKILL( BattleSkill.Mahamaon );
+                AI_TAR_RND();
+                return;
+            }
+            else 
+            {
+                AI_ACT_SKILL( BattleSkill.Mamudoon );
+                AI_TAR_RND();
+                return;
+            }
+
+        }
+        else 
+        {
+            AI_ACT_WAIT();
+            return;
+        }
+
+    }
+    else 
+    {
+        AI_ACT_WAIT();
+        return;
+    }
+
+}
+
+
+
+// Procedure Index: 107
+void AI_COMMON_hook()
+{
+    int var33;
+    int var34;
+    int var35;
+	int var236;
+    sVar30 = 0;
+    
+    if ( !BIT_CHK( 4890 ) )
+    {
+        SET_SP( 1, 0 );
+    }
+	
+	if ( AI_FUNCTION_0069( 0, 1 ) ) // Get turn for MC
+	{
+		var236 = AI_FUNCTION_00B9( 1 ); // Get Count for COUNT 1 and assign to var236
+		var236 = ( var236 + 1 ); // Increase var236 by 1
+
+		
+		if (var236 == 5) // Check if var236 has reached 5
+		{
+			BIT_OFF(4864); // Disabling this flag reenables fuuka's oracle
+			var236 = 0; // Optionally reset var236 to 0 after it reaches 5
+		}
+
+		AI_FUNCTION_00BA( 1, var236 ); // Set count 1 to var236
+	}
+
+    var33 = sVar31;
+    var34 = sVar32;
+    var35 = AI_FUNCTION_00B9( 0 );
+    var35 = ( var35 + 1 );
+    AI_FUNCTION_00BA( 0, var35 );
+    
+    if ( var35 >= var33 )
+    {
+        AI_FUNCTION_00BA( 0, 0 );
+        sVar30 = 1;
+        return;
+    }
+
+    sVar30 = 0;
+}
