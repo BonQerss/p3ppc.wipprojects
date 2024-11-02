@@ -31,11 +31,11 @@
 
 ## TODOs
 
-P3R SEES Gear:
+### P3R SEES Gear:
 
 Remake all models (Why didn't I bend the elbows)
 
-P3R Skill Backport
+### P3R Skill Backport
 
 Figure out balance for third tier skills
 
@@ -46,48 +46,48 @@ Apply skill sets to party members
 (?) Add in new passives
 
 
-Better Oracle Usage
+### Better Oracle Usage
 
 Figure out where to insert the flowscript to act on every MC turn
 
 
-Demons Over Shadows
+### Demons Over Shadows
 
 Fix Tartarus Guardians
 
 Fix Unit.TBL to not use custom skills
 
 
-HD Persona Models
+### HD Persona Models
 
 Port over new models from P4G 64bit version of mod
 
 
-HEV Suits
+### HEV Suits
 
 Figure out why Shinji is crashing
 
 Figure out Junpei blinking material issue
 
 
-Night Time Music
+### Night Time Music
 
 Figure out why Map BGM BGM call isn't working
 
 
-Night Time Strip Mall
+### Night Time Strip Mall
 
 Polish off dialogue
 
 Wait for Unhardcoded Item Names Publish
 
 
-Persona Outfits
+### Persona Outfits
 
 Make outfits for all Party Members
 
 
-Tartarus Dialogue Backport
+### Tartarus Dialogue Backport
 
 Figure out random banter that characters do
 
